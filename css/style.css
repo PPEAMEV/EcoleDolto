@@ -16,21 +16,48 @@ html {
 }
 
 body {
-    margin-bottom: 200px;
+    margin-bottom: 180px;
 }
 
 /*-----------------------HEADER------------------------*/
 
 header {
-    height: 120px;
+    height: 150px;
     padding: 20px;
-    text-align: center;
+    text-align: right;
+    font-family: 'Amatic SC', cursive;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+header h3 {
+    margin-top: 0px;
+}
+
+.lettre-rouge {
+    color: salmon;
+}
+
+.lettre-bleu {
+    color: #61C0DB
+}
+
+.lettre-orange {
+    color: orange;
 }
 
 /*-----------------MENU DE NAVIGATION------------------*/
 
+
+
 .navbar li {
     border-left: solid 1px lightgray;
+    
 }
 
 .navbar-default {
@@ -42,7 +69,84 @@ header {
 
 .navbar {
     margin-bottom: 0px;
+    font-family: 'Amatic SC', cursive;
 }
+
+#barre-nav {
+    font-size: 1.5em;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+.rouge {
+    border-top: solid 3px salmon;
+}
+
+.bleu {
+    border-top: solid 3px #61C0DB;
+}
+
+.orange {
+    border-top: solid 3px orange;
+}
+
+.fin-nav {
+    border-right: solid 1px lightgray;
+}
+
+.dropdown-menu {
+    font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+   .navbar-nav .open .dropdown-menu {
+       position: static;
+       float: none;
+       width: auto;
+       margin-top: 0;
+       background-color: transparent;
+       border: 0;
+       -webkit-box-shadow: none;
+       box-shadow: none;
+    }
+}
+
 
 /*-------------GRID D'IMAGES ET DE TEXTE------------------*/
 
@@ -67,7 +171,7 @@ header {
 }
 
 .texte2 {
-    background-color: lightblue;
+    background-color: #61C0DB;
 }
 
 .texte3 {
@@ -79,9 +183,14 @@ header {
 
 footer {
     position: absolute;
-    height: 200px;
+    height: 180px;
     bottom: 0;
     width: 100%;
     background-color: lightgray;
+    text-align: center;
 }
 
+footer h1 {
+    text-transform: uppercase;
+    font-family: 'Amatic SC', cursive;
+}

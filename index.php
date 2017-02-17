@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -19,37 +19,50 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <header>
-            <h1>École élémentaire publique Françoise Dolto</h1>
+        <header class="container">
+            <h1><span class="lettre-bleu">É</span>cole <span class="lettre-orange">é</span>lémentaire <span class="lettre-rouge">F</span>rançoise <span class="lettre-bleu">D</span>olt<span class="lettre-orange">o</span></h1>
+<!--            <h3>Séné</h3>-->
         </header>
         
         
         <nav class="navbar navbar-default">
             <div class="container">
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barre-nav">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#">WebSiteName</a>
+                <a class="navbar-brand" href="#">Ecole Dolto</a>
               </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
+              <div class="collapse navbar-collapse" id="barre-nav">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                  <li class="rouge"><a href="#">Accueil</a></li>
+                  <li class="dropdown bleu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Page 1-1</a></li>
-                      <li><a href="#">Page 1-2</a></li>
-                      <li><a href="#">Page 1-3</a></li>
+                      <li><a href="#">Classe passerelle</a></li>
+                      <li><a href="#">Petite section</a></li>
+                      <li><a href="#">Moyenne section</a></li>
+                      <li><a href="#">Grande section</a></li>
+                      <li><a href="#">Cantine</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">Page 2</a></li>
-                  <li><a href="#">Page 3</a></li>
+                  <li><a class="orange" href="#">Horaires et emplois du temps</a></li>
+                  <li><a class="rouge" href="#">Inscriptions</a></li>
+                  <li class="dropdown bleu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Conseil d'école<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">2015</a></li>
+                            <li><a href="#">2016</a></li>
+                            <li><a href="#">2017</a></li>
+                            <li><a href="#">Archive</a></li>
+                        </ul>
+                  </li>
+                  <li><a class="orange fin-nav" href="#">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Administrateur</a></li>
+                  <li class="rouge fin-nav"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
                 </ul>
               </div>
             </div>
@@ -82,7 +95,12 @@ and open the template in the editor.
             </div>
         </div>
         <footer>
-            
+            <div class="container">
+                <h1>Coordonnées:</h1><br>
+                Rue des écoles<br>
+                56860 Séné<br>
+                Tél. 02 97 66 90 70
+            </div>
         </footer>
     </body>
 </html>
