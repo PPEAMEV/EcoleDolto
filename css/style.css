@@ -150,6 +150,8 @@ header h3 {
 
 /*-------------GRID D'IMAGES ET DE TEXTE------------------*/
 
+/* ANCIEN CSS NON RESPONSIVE
+
 .case {
     height: 200px;
     text-align: justify;
@@ -176,6 +178,54 @@ header h3 {
 
 .texte3 {
     background-color: orange;
+}
+
+.img-responsive {
+display: block;
+max-width: 100%;
+height: auto;
+width: 100%;
+}*/
+
+
+.ligne-bleu {
+    background-color: #61C0DB;
+}
+.ligne-rouge {
+    background-color: salmon;
+}
+.ligne-orange {
+    background-color: orange;
+}
+
+.texte {
+    text-align: justify;
+    padding: 7% 2% 2% 2%;
+    color: white;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+.right {
+    float: right;
+    width: 50%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.ligne:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 700px) {
+    .left, .right {
+    float: none;
+        width: auto;
+    }
 }
 
 
