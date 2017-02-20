@@ -5,12 +5,18 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<?php include_once("header.php");?>
+<?php 
+
+include_once("header.php");
+require_once("php/fonctions.php");
+$lignes = accueil();
+
+?>
 
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div class="left texte">
-                    <p>Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves apud Constantium, cetera medium principem sed siquid auribus eius huius modi quivis infudisset ignotus, acerbum et inplacabilem et in hoc causarum titulo dissimilem sui.</p>
+                    <p><?php echo $lignes[0];?></p>
                 </div>
                 <div class="right">
                     <img src="http://lorempixel.com/640/480/" alt="" />
@@ -21,12 +27,12 @@ and open the template in the editor.
                     <img src="http://lorempixel.com/640/480/" alt="" />
                 </div>
                 <div class="right texte">
-                    <p>Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves apud Constantium, cetera medium principem sed siquid auribus eius huius modi quivis infudisset ignotus, acerbum et inplacabilem et in hoc causarum titulo dissimilem sui.</p>
+                    <p><?php echo $lignes[1];?></p>
                 </div>
             </div>
             <div class="ligne ligne-orange">
                 <div class="left texte">
-                    <p>Sed cautela nimia in peiores haeserat plagas, ut narrabimus postea, aemulis consarcinantibus insidias graves apud Constantium, cetera medium principem sed siquid auribus eius huius modi quivis infudisset ignotus, acerbum et inplacabilem et in hoc causarum titulo dissimilem sui.</p>
+                    <p><?php echo $lignes[2];?></p>
                 </div>
                 <div class="right">
                     <img src="http://lorempixel.com/640/480/" alt="" />
