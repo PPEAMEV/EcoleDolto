@@ -1,17 +1,22 @@
 <?php
+session_start();
 require_once 'php/fonctions.php';
-$lignesAccueil = accueil();
-$estConnecte = false;
-if(!isset($_REQUEST['action']) && !$estConnecte){
-    $_REQUEST['action'] = 'accueil';
+$fichier = recupXml();
+$lignesAccueil = accueil($fichier);
+$estConnecte = estConnecte();
+//echo $_SESSION['user'];
+if(!isset($_REQUEST['uc']) && !$estConnecte){
+    $_REQUEST['uc'] = 'accueil';
 }
-$controleur = $_REQUEST['action'];
+$controleur = $_REQUEST['uc'];
 switch($controleur) {
     case 'accueil': {
         include("controleurs/c_accueil.php");
+        break;
     }
-    case 'demandeConnexion': {
+    case 'connexion': {
         include("controleurs/c_connexion.php");
+        break;
     }
 }
 

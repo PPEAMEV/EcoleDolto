@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="./src/css/style.css">
+        <link rel="stylesheet" type="text/css" href="src/css/style.css">
     </head>
     <body>
         <header class="container">
@@ -32,7 +32,7 @@
               </div>
               <div class="collapse navbar-collapse" id="barre-nav">
                 <ul class="nav navbar-nav">
-                  <li class="rouge"><a href="#">Accueil</a></li>
+                  <li class="rouge"><a href="index.php">Accueil</a></li>
                   <li class="dropdown bleu">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -57,8 +57,9 @@
                   <li><a class="orange fin-nav" href="#">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="rouge fin-nav"><a href="index.php?action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
+                    <li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> <?php if (estConnecte()) {echo "Déconnexion";} else {echo "Admin";};?> </a></li>
                 </ul>
               </div>
             </div>
           </nav>
+          <?php if (estConnecte()) {echo "Bonjour ".$_SESSION['user'];};?>

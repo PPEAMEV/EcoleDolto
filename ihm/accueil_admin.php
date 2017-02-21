@@ -1,11 +1,8 @@
-<?php 
-
+<?php
 include_once("header.php");
-require_once("php/fonctions.php");
-$lignes = accueil();
+$lignes = accueil($fichier);
 
 ?>
-
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div class="left texte">
