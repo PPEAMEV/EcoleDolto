@@ -7,7 +7,7 @@
  */
 
 function accueil () {
-    $parametres = simplexml_load_file('xml/bdd.xml');
+    $parametres = simplexml_load_file('donnees/xml/bdd.xml');
     $lignes[0] = $parametres->accueil->ligne[0];
     $lignes[1] = $parametres->accueil->ligne[1];
     $lignes[2] = $parametres->accueil->ligne[2];
