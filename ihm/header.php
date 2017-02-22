@@ -12,6 +12,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="src/css/style.css">
+        <script src="src/js/functions.js"></script>
     </head>
     <body>
         <header class="container">
@@ -21,7 +22,7 @@
         
         
         <nav class="navbar navbar-default">
-            <div class="container">
+            <div class="navcontainer container">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barre-nav">
                   <span class="icon-bar"></span>

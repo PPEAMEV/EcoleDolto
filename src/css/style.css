@@ -74,6 +74,7 @@ header h3 {
 .navbar {
     margin-bottom: 0px;
     font-family: 'Amatic SC', cursive;
+    text-align: center;
 }
 
 #barre-nav {
@@ -140,6 +141,7 @@ header h3 {
         display:block !important;
     }
    .navbar-nav .open .dropdown-menu {
+       text-align: center;
        position: static;
        float: none;
        width: auto;
@@ -154,43 +156,6 @@ header h3 {
 
 /*-------------GRID D'IMAGES ET DE TEXTE------------------*/
 
-/* ANCIEN CSS NON RESPONSIVE
-
-.case {
-    height: 200px;
-    text-align: justify;
-    padding: 0px;
-    color: white;
-}
-
-.case p {
-    padding: 40px;
-}
-
-.case img {
-    max-height: 100%;
-    min-width: 100%;
-}
-
-.texte1 {
-    background-color: salmon;
-}
-
-.texte2 {
-    background-color: #61C0DB;
-}
-
-.texte3 {
-    background-color: orange;
-}
-
-.img-responsive {
-display: block;
-max-width: 100%;
-height: auto;
-width: 100%;
-}*/
-
 
 .ligne-bleu {
     background-color: #61C0DB;
@@ -204,17 +169,19 @@ width: 100%;
 
 .texte {
     text-align: justify;
-    padding: 7% 2% 2% 2%;
+    padding: 10% 2% 2% 2%;
     color: white;
 }
 
 .left {
     float: left;
     width: 50%;
+    position: relative;
 }
 .right {
     float: right;
     width: 50%;
+    position: relative;
 }
 img {
     max-width: 100%;
@@ -227,7 +194,7 @@ img {
 }
 @media screen and (max-width: 700px) {
     .left, .right {
-    float: none;
+        float: none;
         width: auto;
     }
 }
@@ -310,4 +277,53 @@ input[type=text], input[type=password] {
 
 #formConnexion label {
     font-weight: normal;
+}
+
+/*------------------------------------------------
+----------------------EDIT------------------------
+-------------------------------------------------*/
+
+.edit {
+    float: right;
+    cursor:pointer;
+    position: absolute;
+    top:3px;
+    right: 3px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
