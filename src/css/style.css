@@ -258,3 +258,9 @@ footer h1 {
     margin:auto;
     padding: 20px;
 }
+
+#err_connexion {
+    width: 250px;
+    margin:auto;
+    padding: 20px;
+}

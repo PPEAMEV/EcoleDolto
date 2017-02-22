@@ -19,8 +19,12 @@ include_once("header.php");
     </form>
 </div>
 
-
 <?php
+if ($err_connexion) {
+    ?> <div id="err_connexion">Erreur de mot de passe ou/et de login, veuillez réessayez.</div><?php
+}
+
+
 
 include_once("footer.php");
 

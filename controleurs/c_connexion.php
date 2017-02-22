@@ -6,6 +6,7 @@ $action = $_REQUEST['action'];
 if (estConnecte()) {
     $action = "déconnexion";
 }
+$err_connexion = false;
 switch($action) {
     case 'demandeConnexion': {
         include_once("ihm/connexion.php");
@@ -14,12 +15,18 @@ switch($action) {
     case 'valideConnexion': {
         $login = $_REQUEST['login'];
 	$mdp = $_REQUEST['mdp'];
-        connexion($fichier, $mdp);
-        include_once 'ihm/accueil_admin.php';
+        if (connexion($fichier, $mdp)) {
+            include_once 'ihm/accueil_admin.php';
+        } else {
+            $err_connexion = true;
+            include_once("ihm/connexion.php");
+        }
+        
         break;
     }
     case 'déconnexion': {
-        echo "ici";
+        $_SESSION = array();
+        session_destroy();
         include_once 'ihm/accueil.php';
         break;
     }

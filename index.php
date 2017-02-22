@@ -4,7 +4,6 @@ require_once 'php/fonctions.php';
 $fichier = recupXml();
 $lignesAccueil = accueil($fichier);
 $estConnecte = estConnecte();
-//echo $_SESSION['user'];
 if(!isset($_REQUEST['uc']) && !$estConnecte){
     $_REQUEST['uc'] = 'accueil';
 }

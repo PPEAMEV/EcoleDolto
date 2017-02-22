@@ -62,4 +62,3 @@
               </div>
             </div>
           </nav>
-          <?php if (estConnecte()) {echo "Bonjour ".$_SESSION['user'];};?>
