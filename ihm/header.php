@@ -32,7 +32,7 @@
               </div>
               <div class="collapse navbar-collapse" id="barre-nav">
                 <ul class="nav navbar-nav">
-                  <li class="rouge"><a href="index.php">Accueil</a></li>
+                  <li class="rouge"><a href="index.php?uc=accueil">Accueil</a></li>
                   <li class="dropdown bleu">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
