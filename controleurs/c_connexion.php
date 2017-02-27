@@ -1,8 +1,8 @@
 <?php
-if(!isset($_REQUEST['action'])){
-    $_REQUEST['action'] = 'demandeConnexion';
+if(!isset($_GET['action'])){
+    $_GET['action'] = 'demandeConnexion';
 }
-$action = $_REQUEST['action'];
+$action = $_GET['action'];
 if (estConnecte() && $action != "valideConnexion") {
     $action = "déconnexion";
 }
@@ -13,8 +13,8 @@ switch($action) {
         break;
     }
     case 'valideConnexion': {
-        $login = $_REQUEST['login'];
-	$mdp = $_REQUEST['mdp'];
+        $login = $_POST['login'];
+	$mdp = $_POST['mdp'];
         if (connexion($fichier, $mdp)) {
             include_once 'ihm/accueil_admin.php';
         } else {

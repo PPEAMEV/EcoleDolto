@@ -4,10 +4,10 @@ require_once 'php/fonctions.php';
 $fichier = recupXml();
 $lignesAccueil = accueil($fichier);
 $estConnecte = estConnecte();
-if(!isset($_REQUEST['uc']) && !$estConnecte){
-    $_REQUEST['uc'] = 'accueil';
+if(!isset($_GET['uc'])){
+    $_GET['uc'] = 'accueil';
 }
-$controleur = $_REQUEST['uc'];
+$controleur = $_GET['uc'];
 switch($controleur) {
     case 'accueil': {
         include("controleurs/c_accueil.php");
