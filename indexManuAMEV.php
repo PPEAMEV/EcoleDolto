@@ -1,4 +1,7 @@
 <?php
+/* Manu - Index perso pour faire des tests */
+
+
 session_start();
 require_once 'php/fonctions.php';
 $fichier = recupXml();

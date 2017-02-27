@@ -35,4 +35,18 @@ function estConnecte() {
     return isset($_SESSION['user']);
 }
 
+//Fonction permettant de modifier le fichier xml - à vérifier (M)
+function modifXml(){
+$xmlDoc = new DOMDocument();
+$xmlDoc->recupXml();
+$xml = $xmlDoc->documentElement;
+foreach($xml->childNodes as $ligne){
+        $ligne->setAttribute("contenu", data);
+	$xmlDoc->save("donnees/xml/bdd.xml");
+
+	break;
+}
+}
+	
+
 ?>

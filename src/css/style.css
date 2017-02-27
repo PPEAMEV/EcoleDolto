@@ -306,7 +306,7 @@ input[type=text], input[type=password] {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #61C0DB;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
