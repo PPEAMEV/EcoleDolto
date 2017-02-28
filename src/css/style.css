@@ -330,3 +330,24 @@ input[type=text], input[type=password] {
     text-decoration: none;
     cursor: pointer;
 }
+
+#footer_tel {
+    position: relative;
+    float: none;
+    top: -3px;
+    right: -3px;
+}
+
+
+/*----------------------------------------
+----------------CONSEILS------------------
+----------------------------------------*/
+table {
+    border: solid 1px gray;
+    margin: 30px;
+    padding: 10px;
+    width: 100%;
+}
+table th {
+    text-align: center;
+}

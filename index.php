@@ -17,6 +17,10 @@ switch($controleur) {
         include("controleurs/c_connexion.php");
         break;
     }
+    case 'conseils': {
+        include("controleurs/c_conseils.php");
+        break;
+    }
 }
 
 ?>

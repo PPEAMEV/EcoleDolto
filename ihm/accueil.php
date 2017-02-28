@@ -2,6 +2,7 @@
 
 include_once("header.php");
 $lignes = accueil($fichier);
+$ligne = footer($fichier);
 
 ?>
 

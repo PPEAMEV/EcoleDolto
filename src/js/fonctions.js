@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
         modal.style.display = "block";
         var request = new XMLHttpRequest();
         request.open("GET", "donnees/xml/bdd.xml", false);
+        request.setRequestHeader("Cache-Control", "no-cache");
         request.send();
         var xml = request.responseXML;
         var $xml = $(xml);
@@ -48,6 +49,7 @@ jQuery(document).ready(function($) {
     };
     
     $('#my_form').on('submit', function (e) {
+                    
                     // On empêche le navigateur de soumettre le formulaire
                     e.preventDefault();
 
@@ -66,6 +68,7 @@ jQuery(document).ready(function($) {
                             $('#result > pre').html(XML.stringify(response, undefined, 4));
                         }
                     });
+                    //window.location.reload();
                 });
 
                 // A change sélection de fichier
@@ -93,6 +96,7 @@ jQuery(document).ready(function($) {
                     $('#my_form').find('input[name="image"]').val('');
                     $('#image_preview').find('.thumbnail').addClass('hidden');
                 });
+                
   
     });
 

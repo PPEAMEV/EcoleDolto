@@ -3,7 +3,8 @@
                 <h1>Coordonnées:</h1><br>
                 Rue des écoles<br>
                 56860 Séné<br>
-                Tél. 02 97 66 90 70
+                
+                <span id="tel"><?php echo $ligne; ?></span>
             </div>
         </footer>
     </body>

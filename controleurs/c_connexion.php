@@ -21,7 +21,6 @@ switch($action) {
             $err_connexion = true;
             include_once("ihm/connexion.php");
         }
-        
         break;
     }
     case 'déconnexion': {

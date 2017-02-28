@@ -16,6 +16,7 @@ switch($action) {
         $contenu = $_POST['content'];
         $id = $_POST['id_ligne'];
         modifXml($id,$contenu);
+        break;
     }
 }
 
