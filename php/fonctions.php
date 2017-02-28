@@ -34,7 +34,7 @@ function estConnecte() {
     return isset($_SESSION['user']);
 }
 
-//Fonction permettant de modifier le fichier xml - à vérifier (M)
+//Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
 function modifXml($id,$contenu){
     //$fichier = recupXml();
     $dom = new DOMDocument();
