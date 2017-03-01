@@ -1,6 +1,7 @@
 <?php 
 
 include_once("header.php");
+$ligne = footer($fichier);
 
 ?>
 
@@ -29,4 +30,3 @@ if ($err_connexion) {
 
 include_once("footer.php");
 
-?>

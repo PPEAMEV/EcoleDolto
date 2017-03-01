@@ -1,12 +1,14 @@
 <?php
 include_once("header.php");
 $lignes = accueil($fichier);
+$images = images_accueil($fichier);
+$ligne = footer($fichier);
+
 
 ?>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -45,22 +47,21 @@ $lignes = accueil($fichier);
                     <div id="result"><pre>Veuillez remplir le formulaire et cliquer sur "Envoyer".</pre></div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="form-group" style="margin-bottom: 0;">
-                <div id="image_preview" class="col-lg-10 col-lg-offset-2">
-                    <div class="thumbnail hidden">
-                        <img src="http://placehold.it/5" alt="">
-                            <div class="caption">
-                                <h4></h4>
-                                <p></p>
-                                <p><button type="button" class="btn btn-default btn-danger">Annuler</button></p>
-                            </div>
+            <div class="col-md-4">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <div id="image_preview" class="col-lg-10 col-lg-offset-2">
+                        <div class="thumbnail hidden">
+                            <img src="http://placehold.it/5" alt="">
+                                <div class="caption">
+                                    <h4></h4>
+                                    <p></p>
+                                    <p><button type="button" class="btn btn-default btn-danger">Annuler</button></p>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
     </div>
     
     <div class="container">
@@ -72,12 +73,12 @@ $lignes = accueil($fichier);
                 </p>
             </div>
             <div class="right">
-                <img src="http://lorempixel.com/640/480/" alt="" />
+                <img src="donnees/img/<?php echo $images[0]?>" alt="" />
             </div>
         </div>
         <div class="ligne ligne-bleu">
             <div class="left">
-                <img src="http://lorempixel.com/640/480/" alt="" />
+                <img src="donnees/img/<?php echo $images[1]?>" alt="" />
             </div>
             <div class="right texte">
                 <img id="accueil_ligne2" class="edit" src="donnees/img/edit.png" />
@@ -94,9 +95,9 @@ $lignes = accueil($fichier);
                 </p>
             </div>
             <div class="right">
-                <img src="http://lorempixel.com/640/480/" alt="" />
+                <img src="donnees/img/<?php echo $images[2]?>" alt="" />
             </div>
         </div>
     </div>
 
-    <?php include_once("footer.php");?>
+    <?php include_once("footer_admin.php");?>

@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
         modal.style.display = "block";
         var request = new XMLHttpRequest();
         request.open("GET", "donnees/xml/bdd.xml", false);
+        request.setRequestHeader("Cache-Control", "no-cache");
         request.send();
         var xml = request.responseXML;
         var $xml = $(xml);
@@ -73,6 +74,7 @@ jQuery(document).ready(function($) {
                     $('#my_form').find('input[name="image"]').val('');
                     $('#image_preview').find('.thumbnail').addClass('hidden');
                 });
+                
   
     });
 
