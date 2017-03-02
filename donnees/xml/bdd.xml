@@ -12,4 +12,11 @@
     <footer>
         <ligne id="footer_tel">Tél. 02 97 66 90 70</ligne>
     </footer>
+    <conseils>
+        <conseil>
+            <nom>compte rendu CE du 15 nov 2016</nom>
+            <date>15 novembre 2016</date>
+            <lien>donnees/pdf/compte_rendu_CE_du_15_nov_2016</lien>
+        </conseil>
+    </conseils>
 </root>

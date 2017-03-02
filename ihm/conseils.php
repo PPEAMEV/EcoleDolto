@@ -1,6 +1,7 @@
 <?php
 include_once 'ihm/header.php';
 $ligne = footer($fichier);
+$conseils = getConseils($fichier);
 ?>
 
 <div class="container">
@@ -8,13 +9,17 @@ $ligne = footer($fichier);
         <tr>
           <th>Nom du fichier</th>
           <th>Date</th> 
-          <th>Lien</th>
+          <th>Télécharger</th>
         </tr>
-        <tr>
-          <td>Conseil 2015</td>
-          <td>03/04/2015</td>
-          <td>http://lien.com</td>
-        </tr>
+        <?php
+        foreach ($conseils as $conseil) {?>
+            <tr>
+                <td><?php echo $conseil[0]?></td>  
+                <td><?php echo $conseil[1]?></td>  
+                <td><a href="<?php echo $conseil[2]?>.pdf">Fichier</a></td> 
+            </tr> <?php
+        }
+        ?>
       </table>
 </div>
 

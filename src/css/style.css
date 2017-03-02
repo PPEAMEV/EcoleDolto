@@ -291,6 +291,12 @@ input[type=text], input[type=password] {
     right: 3px;
 }
 
+.ajout {
+    margin-left: 10%;
+    margin-top: 20px;
+    cursor:pointer;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -344,10 +350,16 @@ input[type=text], input[type=password] {
 ----------------------------------------*/
 table {
     border: solid 1px gray;
-    margin: 30px;
+    margin: auto;
+    margin-top: 20px;
     padding: 10px;
-    width: 100%;
+    width: 80%;
+    text-align: center;
 }
+table tr {
+    border-top: solid 1px gray;
+}
+
 table th {
     text-align: center;
 }

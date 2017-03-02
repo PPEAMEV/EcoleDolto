@@ -6,10 +6,20 @@
  * and open the template in the editor.
  */
 
+/**
+ * récupère le fichier xml sous forme SimpleXML
+ * @return type
+ */
 function recupXml() {
     $fichier = simplexml_load_file('donnees/xml/bdd.xml');
     return $fichier;
 }
+
+/**
+ * récupère les données modifiables de l'accueil
+ * @param type $fichier
+ * @return type
+ */
 function accueil($fichier) {
     $lignes[0] = (string)$fichier->accueil->ligne[0];
     $lignes[1] = (string)$fichier->accueil->ligne[1];
@@ -17,11 +27,22 @@ function accueil($fichier) {
     return $lignes;
 }
 
+/**
+ * récupère les données modifiables du footer
+ * @param type $fichier
+ * @return type
+ */
 function footer($fichier) {
     $ligne = (string)$fichier->footer->ligne[0];
     return $ligne;
 }
 
+/**
+ * gère la connexion de l'admin
+ * @param type $fichier
+ * @param type $mdp
+ * @return boolean
+ */
 function connexion($fichier, $mdp) {
     $user = (string)$fichier->admin->user;
     $hash = (string)$fichier->admin->mdp;
@@ -34,12 +55,19 @@ function connexion($fichier, $mdp) {
     return $reussite;
     
 }
-
+/**
+ * vérifie si l'admin est connecté
+ * @return boolean
+ */
 function estConnecte() {
     return isset($_SESSION['user']);
 }
 
-//Fonction permettant de modifier le fichier xml - à vérifier (M)
+/**
+ * modifie l'xml et le sauvegarde
+ * @param type $id
+ * @param type $contenu
+ */
 function modifXml($id,$contenu){
     $dom = new DOMDocument();
     $dom->load('donnees/xml/bdd.xml');
@@ -50,6 +78,15 @@ function modifXml($id,$contenu){
     $oldNode->parentNode->replaceChild($newNode, $oldNode);
     $dom->save('donnees/xml/bdd.xml');
 }
-	
 
-?>
+function getConseils($fichier) {
+    $i = 0;
+    foreach($fichier->xpath('//conseils') as $conseils) {
+        $listeConseils[$i][0] = $conseils->conseil->nom;
+        $listeConseils[$i][1] = $conseils->conseil->date;
+        $listeConseils[$i][2] = $conseils->conseil->lien;
+        $i++;
+    }
+    return $listeConseils;
+}
+	
