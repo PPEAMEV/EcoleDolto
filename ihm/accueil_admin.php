@@ -1,6 +1,7 @@
 <?php
 include_once("header.php");
 $lignes = accueil($fichier);
+$images = images_accueil($fichier);
 $ligne = footer($fichier);
 
 
@@ -16,13 +17,6 @@ $ligne = footer($fichier);
                     <form id="my_form" class="form-horizontal well" method="post" action="index.php?uc=accueil&action=majXml" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Modifier l'article</legend>
-
-<!--                                <div class="form-group">
-                                <label for="titre" class="col-lg-2 control-label">Titre</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="titre" name="title" placeholder="Titre de l'article">
-                                </div>
-                            </div> -->
 
                             <div class="form-group">
                                 <label for="contenu" class="col-lg-2 control-label">Contenu</label>
@@ -79,12 +73,12 @@ $ligne = footer($fichier);
                 </p>
             </div>
             <div class="right">
-                <img src="donnees/img/P1080621.jpg" alt="" />
+                <img src="donnees/img/<?php echo $images[0]?>" alt="" />
             </div>
         </div>
         <div class="ligne ligne-bleu">
             <div class="left">
-                <img src="donnees/img/P1080621.jpg" alt="" />
+                <img src="donnees/img/<?php echo $images[1]?>" alt="" />
             </div>
             <div class="right texte">
                 <img id="accueil_ligne2" class="edit" src="donnees/img/edit.png" />
@@ -101,7 +95,7 @@ $ligne = footer($fichier);
                 </p>
             </div>
             <div class="right">
-                <img src="donnees/img/P1080621.jpg" alt="" />
+                <img src="donnees/img/<?php echo $images[2]?>" alt="" />
             </div>
         </div>
     </div>

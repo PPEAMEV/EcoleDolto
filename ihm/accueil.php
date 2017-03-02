@@ -2,6 +2,7 @@
 
 include_once("header.php");
 $lignes = accueil($fichier);
+$images = images_accueil($fichier);
 $ligne = footer($fichier);
 
 ?>
@@ -12,12 +13,12 @@ $ligne = footer($fichier);
                     <p><?php echo $lignes[0];?></p>
                 </div>
                 <div class="right">
-                    <img src="http://lorempixel.com/640/480/" alt="" />
+                    <img src="donnees/img/<?php echo $images[0]?>" alt="" />
                 </div>
             </div>
             <div class="ligne ligne-bleu">
                 <div class="left">
-                    <img src="http://lorempixel.com/640/480/" alt="" />
+                    <img src="donnees/img/<?php echo $images[1]?>" alt="" />
                 </div>
                 <div class="right texte">
                     <p><?php echo $lignes[1];?></p>
@@ -28,7 +29,7 @@ $ligne = footer($fichier);
                     <p><?php echo $lignes[2];?></p>
                 </div>
                 <div class="right">
-                    <img src="http://lorempixel.com/640/480/" alt="" />
+                    <img src="donnees/img/<?php echo $images[2]?>" alt="" />
                 </div>
             </div>
         </div>

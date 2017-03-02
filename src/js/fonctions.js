@@ -48,29 +48,7 @@ jQuery(document).ready(function($) {
         }
     };
     
-    $('#my_form').on('submit', function (e) {
-                    
-                    // On empêche le navigateur de soumettre le formulaire
-                    e.preventDefault();
-
-                    var $form = $(this);
-                    var formdata = (window.FormData) ? new FormData($form[0]) : null;
-                    var data = (formdata !== null) ? formdata : $form.serialize();
-
-                    $.ajax({
-                        url: $form.attr('action'),
-                        type: $form.attr('method'),
-                        contentType: false, // obligatoire pour de l'upload
-                        processData: false, // obligatoire pour de l'upload
-                        dataType: 'xml', // selon le retour attendu
-                        data: data,
-                        success: function (response) {
-                            $('#result > pre').html(XML.stringify(response, undefined, 4));
-                        }
-                    });
-                    //window.location.reload();
-                });
-
+  
                 // A change sélection de fichier
                 $('#my_form').find('input[name="image"]').on('change', function (e) {
                     var files = $(this)[0].files;
