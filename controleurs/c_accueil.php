@@ -15,8 +15,9 @@ switch($action) {
     case 'majXml': {
         $contenu = $_POST['content'];
         $id = $_POST['id_ligne'];
-        //$img = $_POST['image'];
-        upload_img();
+        if(is_uploaded_file($_FILES['image']['tmp_name'])) {
+            upload_img();
+        }
         modifXml($id,$contenu/*,$img*/);
         $fichier= recupXml(); //récupération du fichier xml pour qu'il s'affiche instantanément dans la page suite à la modif
 
