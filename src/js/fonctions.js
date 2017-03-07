@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
   
     // GESTION DE LA FENETRE MODAL
     // Get the modal
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById('modal_texte');
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     // When the user clicks the button, open the modal 

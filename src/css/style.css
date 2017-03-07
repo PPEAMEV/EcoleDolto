@@ -348,6 +348,7 @@ input[type=text], input[type=password] {
 /*----------------------------------------
 ----------------CONSEILS------------------
 ----------------------------------------*/
+
 table {
     border: solid 1px gray;
     margin: auto;
@@ -355,11 +356,19 @@ table {
     padding: 10px;
     width: 80%;
     text-align: center;
-}
-table tr {
-    border-top: solid 1px gray;
+    border-collapse: collapse;
 }
 
-table th {
+td, th {
+    border: 1px solid #dddddd;
     text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.container_conseils {
+    padding-bottom: 15px;
 }

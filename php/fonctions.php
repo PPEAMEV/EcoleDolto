@@ -22,15 +22,15 @@ function recupXml() {
  */
 function accueil($fichier) {
     $lignes[0] = (string)$fichier->accueil->ligne[0];
-    $lignes[1] = (string)$fichier->accueil->ligne[1];
-    $lignes[2] = (string)$fichier->accueil->ligne[2];
+    $lignes[1] = (string)$fichier->accueil->ligne[2];
+    $lignes[2] = (string)$fichier->accueil->ligne[4];
     return $lignes;
 }
 
 function images_accueil($fichier){
-    $images[0] = (string)$fichier->accueil->image[0];
-    $images[1] = (string)$fichier->accueil->image[1];
-    $images[2] = (string)$fichier->accueil->image[2];
+    $images[0] = (string)$fichier->accueil->ligne[1];
+    $images[1] = (string)$fichier->accueil->ligne[3];
+    $images[2] = (string)$fichier->accueil->ligne[5];
     return $images;
 }
 
@@ -176,7 +176,7 @@ function modifXml($id,$contenu){
     //recherche de la ligne concernée dans le xml avec le DOMPath(requete)
     $xp = new DOMXPath($dom);
     //Remplacement du noeud pour le texte
-    $oldNode = $xp->query('//ligne[@id="'.$id.'"]')->item(0);
+    $oldNode = $xp->query('//*[@id="'.$id.'"]')->item(0);
     $oldNode->parentNode->replaceChild($newNode, $oldNode);
     
 /*   //Remplacement du noeud pour l'image
