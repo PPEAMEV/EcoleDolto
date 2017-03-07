@@ -187,6 +187,22 @@ function modifXml($id,$contenu){
     $dom->save('donnees/xml/bdd.xml');
 }
 
+function ajoutXml($nom,$date,$fichier) {
+    $dom = new DOMDocument();
+    $dom->load('donnees/xml/bdd.xml');
+    //$nbConseils = $dom->getElementsByTagName('conseil')->length;
+    $newNode = $dom->createElement('conseil');
+    $subNodesNom = $dom->createElement('nom',$nom);
+    $subNodesDate = $dom->createElement('date',$date);
+    $subNodesFichier = $dom->createElement('fichier',$fichier);
+    $newNode->appendChild($subNodesNom);
+    $newNode->appendChild($subNodesDate);
+    $newNode->appendChild($subNodesFichier);
+    $conseils = $dom->getElementsByTagName('conseils')[0];
+    $conseils->appendChild($newNode);
+    $dom->save('donnees/xml/bdd.xml');
+}
+
 function getConseils($fichier) {
     $i = 0;
     foreach($fichier->xpath('//conseils') as $conseils) {

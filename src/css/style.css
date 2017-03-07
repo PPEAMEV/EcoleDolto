@@ -283,7 +283,7 @@ input[type=text], input[type=password] {
 ----------------------EDIT------------------------
 -------------------------------------------------*/
 
-.edit {
+.edit, .img {
     float: right;
     cursor:pointer;
     position: absolute;
