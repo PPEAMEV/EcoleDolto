@@ -205,10 +205,11 @@ function ajoutXml($nom,$date,$fichier) {
 
 function getConseils($fichier) {
     $i = 0;
-    foreach($fichier->xpath('//conseils') as $conseils) {
-        $listeConseils[$i][0] = $conseils->conseil->nom;
-        $listeConseils[$i][1] = $conseils->conseil->date;
-        $listeConseils[$i][2] = $conseils->conseil->lien;
+    $listeConseils = array();
+    foreach($fichier->xpath('//conseil') as $conseil) {
+        $listeConseils[$i][0] = $conseil->nom;
+        $listeConseils[$i][1] = $conseil->date;
+        $listeConseils[$i][2] = $conseil->lien;
         $i++;
     }
     return $listeConseils;
