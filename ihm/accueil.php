@@ -10,7 +10,7 @@ $ligne = footer($fichier);
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div class="left texte">
-                    <p><?php echo $lignes[0];?></p>
+                    <p><?php echo nl2br($lignes[0]);?></p>
                 </div>
                 <div class="right">
                     <img src="donnees/img/<?php echo $images[0]?>" alt="" />
@@ -21,12 +21,12 @@ $ligne = footer($fichier);
                     <img src="donnees/img/<?php echo $images[1]?>" alt="" />
                 </div>
                 <div class="right texte">
-                    <p><?php echo $lignes[1];?></p>
+                    <p><?php echo nl2br($lignes[1]);?></p>
                 </div>
             </div>
             <div class="ligne ligne-orange">
                 <div class="left texte">
-                    <p><?php echo $lignes[2];?></p>
+                    <p><?php echo nl2br($lignes[2]);?></p>
                 </div>
                 <div class="right">
                     <img src="donnees/img/<?php echo $images[2]?>" alt="" />

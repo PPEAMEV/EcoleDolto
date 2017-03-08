@@ -69,7 +69,7 @@ $ligne = footer($fichier);
             <div class="left texte">
                 <img id="accueil_ligne1" class="edit" src="donnees/img/edit.png" />
                 <p>
-                    <?php echo $lignes[0];?>
+                    <?php echo nl2br($lignes[0]);?>
                 </p>
             </div>
             <div class="right">
@@ -85,7 +85,7 @@ $ligne = footer($fichier);
             <div class="right texte">
                 <img id="accueil_ligne2" class="edit" src="donnees/img/edit.png" />
                 <p>
-                    <?php echo $lignes[1];?>
+                    <?php echo nl2br($lignes[1]);?>
                 </p>
             </div>
         </div>
@@ -93,7 +93,7 @@ $ligne = footer($fichier);
             <div class="left texte">
                 <img id="accueil_ligne3" class="edit" src="donnees/img/edit.png" />
                 <p>
-                    <?php echo $lignes[2];?>
+                    <?php echo nl2br($lignes[2]);?>
                 </p>
             </div>
             <div class="right">
