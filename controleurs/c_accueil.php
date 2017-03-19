@@ -19,7 +19,7 @@ switch($action) {
             if(is_uploaded_file($_FILES['image']['tmp_name'])) {
                 upload_img();
             }
-            modifXml($id,$contenu/*,$img*/);
+            modifXmlAccueil($id,$contenu/*,$img*/);
             $fichier= recupXml(); //récupération du fichier xml pour qu'il s'affiche instantanément dans la page suite à la modif
         }
         include_once 'ihm/accueil_admin.php';

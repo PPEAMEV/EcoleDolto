@@ -372,3 +372,13 @@ tr:nth-child(even) {
 .container_conseils {
     padding-bottom: 15px;
 }
+
+.container_conseils .edit {
+    position: relative;
+    top:0px;
+    right: 0px;
+    float: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+

@@ -13,13 +13,6 @@ $conseils = getConseils($fichier);
             <fieldset>
                 <legend>Ajouter un conseil d'école</legend>
 
-
-                <div class="form-group">
-                    <label for="contenu" class="col-lg-2 control-label">Nom</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="1" id="contenu_nom" name="nom" placeholder="Nom du fichier"></textarea>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="contenu" class="col-lg-2 control-label">Date</label>
                     <div class="col-lg-10">
@@ -46,24 +39,34 @@ $conseils = getConseils($fichier);
     </div>
 </div>
 
+
+<div id="dialog-confirm" title="Confirmation de la suppression" style="display:none;">
+  <p>
+    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+    Etes-vous sûr de vouloir supprimer cet élément ?
+    </p>
+</div>
+
+
 <div class="container container_conseils">
     <div>
         <img id="conseil_ajout" class="ajout" src="donnees/img/plus.png" />
     </div>
     <table>
         <tr>
-            <th>Nom du fichier</th>
-            <th>Date</th> 
+            <th>Date du conseil</th> 
             <th>Télécharger</th>
+            <th><img src="donnees/img/settings_icon.png"/></th>
         </tr>
         <?php foreach ($conseils as $conseil) { ?>
             <tr>
-                <td><?php echo $conseil[0] ?></td>  
-                <td><?php echo $conseil[1] ?></td>  
-                <td><a href="<?php echo $conseil[2] ?>.pdf">Fichier</a></td> 
+                <td><?php echo $conseil[0]?></td>  
+                <td><a href="<?php echo LIEN_PDF.$conseil[1]?>"><?php echo $conseil[1]; ?></a></td>
+                <td><img id="<?php echo $conseil[1];?>" class="edit" src="donnees/img/edit.png" /><a class="confirmModal" href="index.php?uc=conseils&action=supprimer&id='<?php echo $conseil[1];?>'"><img class="edit" src="donnees/img/delete_icon.png" /></a></td>
             </tr> <?php
         }
         ?>
+            
     </table>
 </div>
 
