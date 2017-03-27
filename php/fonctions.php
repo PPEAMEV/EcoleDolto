@@ -206,7 +206,7 @@ function upload_img() {
  * @param type $id
  * @param type $contenu
  */
-function modifXml($id,$contenu){
+function modifXmlAccueil($id,$contenu){
     $dom = new DOMDocument();
     //chargement de la bdd
     $dom->load('donnees/xml/bdd.xml');
@@ -216,12 +216,6 @@ function modifXml($id,$contenu){
     //modification du noeud ligne avec les infos renseignées par l'admin dans le formulaire
     $newNode->setAttribute('id', $id);
     
-/*   //création d'un noeud image dans le xml
-    $newNodeImg = $dom->createElement('image', $nom_final);
-    //modification du noeud image avec le nom final de l'image rajoutée par l'admin dans le formulaire
-    $newNodeImg->setAttribute('id', $id);*/
-    
-    //recherche de la ligne concernée dans le xml avec le DOMPath(requete)
     $xp = new DOMXPath($dom);
     //Remplacement du noeud pour le texte
     $oldNode = $xp->query('//*[@id="'.$id.'"]')->item(0);
@@ -235,15 +229,13 @@ function modifXml($id,$contenu){
     $dom->save('donnees/xml/bdd.xml');
 }
 
-function ajoutXml($nom,$date,$fichier) {
+function ajoutXml($date,$fichier) {
     $dom = new DOMDocument();
     $dom->load('donnees/xml/bdd.xml');
-    //$nbConseils = $dom->getElementsByTagName('conseil')->length;
     $newNode = $dom->createElement('conseil');
-    $subNodesNom = $dom->createElement('nom',$nom);
+    $newNode->setAttribute("id", $fichier);
     $subNodesDate = $dom->createElement('date',$date);
     $subNodesFichier = $dom->createElement('fichier',$fichier);
-    $newNode->appendChild($subNodesNom);
     $newNode->appendChild($subNodesDate);
     $newNode->appendChild($subNodesFichier);
     $conseils = $dom->getElementsByTagName('conseils')[0];
@@ -255,10 +247,24 @@ function getConseils($fichier) {
     $i = 0;
     $listeConseils = array();
     foreach($fichier->xpath('//conseil') as $conseil) {
-        $listeConseils[$i][0] = $conseil->nom;
-        $listeConseils[$i][1] = $conseil->date;
-        $listeConseils[$i][2] = $conseil->lien;
+        $listeConseils[$i][0] = $conseil->date;
+        $listeConseils[$i][1] = $conseil->fichier;
         $i++;
     }
     return $listeConseils;
+}
+
+function modifXmlConseils($id,$date,$fichier) {
+    
+}
+
+function supprXmlConseils($id) {
+    $id = str_replace("'", "", $id);
+    $dom = new DOMDocument();
+    $dom->load('donnees/xml/bdd.xml');
+    $xp = new DOMXPath($dom);
+    $nodeToDel = $xp->query('//*[@id="'.$id.'"]')->item(0);
+    $conseils = $dom->getElementsByTagName('conseils')[0];
+    $conseils->removeChild($nodeToDel);
+    $dom->save('donnees/xml/bdd.xml');
 }

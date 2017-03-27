@@ -21,7 +21,7 @@ switch($action) {
                 upload_img();
                 $contenu = preg_replace("` `i", "", $fichier);
             }
-            modifXml($id,$contenu);
+            modifXmlAccueil($id,$contenu);
             $fichier= recupXml(); //récupération du fichier xml pour qu'il s'affiche instantanément dans la page suite à la modif
         }
         include_once 'ihm/accueil_admin.php';

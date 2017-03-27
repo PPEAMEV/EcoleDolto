@@ -1,5 +1,6 @@
 <?php
 session_start();
+define("LIEN_PDF","donnees/pdf/");
 require_once 'php/fonctions.php';
 $fichier = recupXml();
 $lignesAccueil = accueil($fichier);
