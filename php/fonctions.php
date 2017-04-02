@@ -98,58 +98,6 @@ tmp_name : le nom temporaire de l'image sur le serveur (depuis la racine du disq
 size : la taille en octets du fichier
 type : le type mime du fichier sélectionné par le client
 error : l'erreur rapportée par php lors de l'upload de l'image */
-/*function upload_img(){
-if (isset($_FILES['image']))
-{
-	//$_FILES existe on récupère les infos qui nous intéressent
-	$fichier=$_FILES['image']['name'];//nom réel de l'image
-        echo $fichier;
-	$size=$_FILES['image']['size']; //poid de l'image en octets
-	$tmp=$_FILES['image']['tmp_name'];//nom temporaire de l'image (sur le serveur)
-	$type=$_FILES['image']['type'];//type de l'image
-	$error = $_FILES['image']['error'];
-	$retour = up_error($error,$fichier);
-        //$nom_final=" ";
-	if ($retour[0] === true) {
-		//On récupère la taille de l'image
-		list($width,$height)=getimagesize($tmp);
-		if (is_uploaded_file($tmp)) //permet de vérifier si le fichier a été uploadé via http
-		{
-			//vérification du type de l'img, son poids et sa taille
-			if ($type=="image/jpeg" | $type=="image/png" | $type=="image/gif" && $size<="26214400" && $width<="4000" && $height<="4000" )
-			{
-				// type tout type d'images, poids < à 26214400 octets soit environ 25Mo, largeur = hauteur = 4000px
-				//Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
-				$fichier = preg_replace ("` `i","",$fichier);//ligne facultative :)
-				//On vérifie s'il existe une image qui a le même nom dans le répertoire
-				if (file_exists('./donnees/img/'.$fichier))
-				{
-					//Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
-					$nom_final= preg_replace("`.*`is",date("U").".*",$fichier);
-				}
-				else {
-					$nom_final=$fichier; //l'image n'existe pas on garde le même nom
-				}
-				//on déplace l'image dans le répertoire final
-				move_uploaded_file($tmp,'./donnees/img/'.$nom_final);
-				//Message indiquant que tout s'est bien passé
-				echo "L'image a été uploadée avec succès<br/>";
-			}
-			else {
-				//Le type mime, ou la taille ou le poids est incorrect
-				echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
-			}
-		}
-		else {
-			echo $retour[1],'<br />';
-		}
-	}
-}
-//Pour tester si l'image est bien à sa place
-echo '<img src="./donnees/img/'.$nom_final.'" border="0" />';
-echo '<br/>';
-echo '<a href="javascript:history.back();">Retour</a>';
-}*/
 function upload_img() {
     if (isset($_FILES['image'])) {
         //$_FILES existe on récupère les infos qui nous intéressent
@@ -196,6 +144,93 @@ function upload_img() {
     echo '<img src="./donnees/img/' . $fichier . '" border="0" />';
     echo '<br/>';
     echo '<a href="javascript:history.back();">Retour</a>';*/
+}
+
+/* TEST UPLOAD FILES en général
+ * function upload_file() {
+    if (isset($_FILES['image'])) {
+        //$_FILES existe on récupère les infos qui nous intéressent
+        $fichier = $_FILES['image']['name'] || $_FILES['pdf']['name']; //nom réel du fichier (image ou pdf)
+        $size = $_FILES['image']['size'] || $_FILES['pdf']['size']; //poid du fichier en octets
+        $tmp = $_FILES['image']['tmp_name'] || $_FILES['pdf']['tmp_name']; //nom temporaire du fichier (sur le serveur)
+        $type = $_FILES['image']['type'] || $_FILES['pdf']['type']; //type de fichier
+        $error = $_FILES['image']['error'] || $_FILES['pdf']['error'];
+        $retour = up_error($error, $fichier);
+        
+        //assigne où uploader le fichier en fonction de son type (pdf ou image)
+        $adress = './donnees/';
+        if (isset($_FILES['pdf']['type'])){
+            $adress = './donnees/pdf/';
+        }
+        else {
+            $adress = './donnees/img/';
+        }
+        //$nom_final=" ";
+        if ($retour[0] === true) {
+            //On récupère la taille de l'image
+            list($width, $height) = getimagesize($tmp);
+            if (is_uploaded_file($tmp)) { //permet de vérifier si le fichier a été uploadé via http
+                //vérification du type de l'img, son poids et sa taille
+                if ($type == "image/jpeg" | $type == "image/png" | $type == "image/gif" | $type == "application/pdf" && $size <= "26214400" && $width <= "4000" && $height <= "4000") {
+                    // type tout type d'images + fichier pdf, poids < à 26214400 octets soit environ 25Mo, largeur = hauteur = 4000px
+                    //Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
+                    $fichier = preg_replace("` `i", "", $fichier); //ligne facultative :)
+                    //On vérifie s'il existe une image qui a le même nom dans le répertoire
+                    if (file_exists($adress . $fichier)) {
+                        touch($fichier);
+                    }
+
+                    //on déplace l'image dans le répertoire final
+                    move_uploaded_file($tmp, $adress . $fichier);
+                    //Message indiquant que tout s'est bien passé
+                    echo "Le fichier a été uploadé avec succès<br/>";
+                } else {
+                    //Le type mime, ou la taille ou le poids est incorrect
+                    echo 'Votre fichier a été rejeté (poids, taille ou type incorrect)';
+                }
+            } else {
+                echo $retour[1], '<br />';
+            }
+        }
+    }
+ */
+
+function upload_file() {
+$dossier = './donnees/pdf/';
+$fichier = basename($_FILES['pdf']['name']);
+$taille_maxi = 26214400;
+$taille = filesize($_FILES['pdf']['tmp_name']);
+$extensions = array('.docx', '.txt','.pdf');
+$extension = strrchr($_FILES['pdf']['name'], '.'); 
+//Début des vérifications de sécurité...
+if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+{
+     $erreur = 'Vous devez uploader un fichier de type pdf, txt ou doc...';
+}
+if($taille>$taille_maxi)
+{
+     $erreur = 'Le fichier est trop gros...';
+}
+if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+{
+     //On formate le nom du fichier ici...
+     $fichier = strtr($fichier, 
+          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+     $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+     if(move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+     {
+          echo 'Upload effectué avec succès !';
+     }
+     else //Sinon (la fonction renvoie FALSE).
+     {
+          echo 'Echec de l\'upload !';
+     }
+}
+else
+{
+     echo $erreur;
+}
 }
 
 //Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
