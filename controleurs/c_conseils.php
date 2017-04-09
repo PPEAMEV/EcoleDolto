@@ -15,7 +15,9 @@ switch ($action) {
     case 'ajoutXml':
         if (isset($_POST['date']) && isset($_FILES['pdf']) && ($_FILES['pdf']['error'] == 0)) {
             $date = $_POST['date'];
-            $fichier = $_FILES['pdf']['name'];
+            $fichierIni = $_FILES['pdf']['name'];
+            $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
+            upload_file();
             ajoutXml($date,$fichier);
             $fichier = recupXml();
         }
