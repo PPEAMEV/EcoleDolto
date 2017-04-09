@@ -268,3 +268,44 @@ function supprXmlConseils($id) {
     $conseils->removeChild($nodeToDel);
     $dom->save('donnees/xml/bdd.xml');
 }
+
+
+//ahmad:pour modfier la xml la même que fuction ajoutXml mais j'ai la modifie pour adapter avec mes elements
+function updateXml($titre,$src) {
+    $dom = new DOMDocument();
+    $dom->load('donnees/xml/bdd.xml');
+    $newNode = $dom->createElement('edt');
+    $subNodesTitre = $dom->createElement('titre',$titre);
+    $subNodesSrc = $dom->createElement('src',$src);
+    $newNode->appendChild($subNodesTitre);
+    $newNode->appendChild($subNodesSrc);
+    $LES_EDT = $dom->getElementsByTagName('LES_EDT')[0];
+    $LES_EDT->appendChild($newNode);
+    $dom->save('donnees/xml/bdd.xml');
+}
+
+//function pour recuprer les informations for afficher les pdfs
+function getPdfs($fichier) {
+    $i = 0;
+    $listePdfs = array();
+    foreach($fichier->xpath('//edt') as $edt) {
+        $listePdfs[$i][0] = $edt->titre;
+        $listePdfs[$i][1] = $edt->src;
+     
+        $i++;
+    }
+    return $listePdfs;
+}
+
+//function pour recuprer les liste des itemes 
+function getItems($fichier){
+    $i=0;
+    $listeItems=array();
+    foreach($fichier->xpath('//item') as $item){
+        $listeItems[$i][0]=$item->img_src;
+        $listeItems[$i][1]=$item->titre;
+        $listeItems[$i][2]=$item->text;
+        $i++;
+    }
+    return $listeItems;
+}

@@ -381,4 +381,50 @@ tr:nth-child(even) {
     margin-left: 5px;
     margin-right: 5px;
 }
+/*-------------i frame------------------*/
 
+#map-ecole {
+    margin: 0px 0px -6px 0px;
+    width: 100%;
+    height: 350px;
+}
+
+
+/*-------------slide------------------*/
+
+.center-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+    max-width: 400px;
+    min-height: 500px;
+    min-width: 900px;
+}
+
+.lead {
+    font-family: Time new roman;
+    color: black;
+}
+
+
+/*-------------PDF iframe------------------*/
+
+iframe {
+    width: 1140px;
+    height: 400px;
+}
+
+@media (max-width: 1024px) {
+    iframe {
+        width: 500px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 350px) {
+    iframe {
+        width: 250px;
+        height: 100px;
+    }
+}

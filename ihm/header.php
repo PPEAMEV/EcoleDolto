@@ -43,14 +43,14 @@
                       <li><a href="#">Petite section</a></li>
                       <li><a href="#">Moyenne section</a></li>
                       <li><a href="#">Grande section</a></li>
-                      <li><a href="#">Cantine</a></li>
-                      <li><a href="#">Activités</a></li>
+                      <li><a href="index.php?uc=cantine">Cantine</a></li>
+                      <li><a href="index.php?uc=activites">Activités</a></li>
                     </ul>
                   </li>
-                  <li><a class="orange" href="#">Horaires et emplois du temps</a></li>
+                  <li><a class="orange" href="index.php?uc=horaires et emplois du temps">Horaires et emplois du temps</a></li>
                   <li><a class="rouge" href="#">Inscriptions</a></li>
                   <li><a class="bleu" href="index.php?uc=conseils">Conseils d'école</a></li>
-                  <li><a class="orange fin-nav" href="#">Plan d'accès</a></li>
+                  <li><a class="orange fin-nav" href="index.php?uc=plan_d_acces">Plan d'accès</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> <?php if (estConnecte()) {echo "Déconnexion";} else {echo "Admin";};?> </a></li>

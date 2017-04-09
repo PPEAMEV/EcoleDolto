@@ -22,6 +22,18 @@ switch($controleur) {
         include("controleurs/c_conseils.php");
         break;
     }
+      case 'plan_d_acces': {
+        include("controleurs/c_plan_d_acces.php");
+      break;
+    }
+    case 'horaires et emplois du temps': {
+        include("controleurs/c_horairs_EDT.php");
+      break;
+    }
+    case 'activites': {
+        include("controleurs/c_activites.php");
+        break;
+    }
 }
 
 ?>
