@@ -8,7 +8,7 @@ $ligne = footer($fichier);
 ?>
     
 <!-- The Modal -->
-<div id="modal_texte" class="modal"> 
+<div id="modal_texte" class="modal-custom"> 
     <!-- Modal content -->
    <div class="modal-content">
         <span class="close">&times;</span>

@@ -5,7 +5,7 @@
     ?>
 
 
-    <div id="modal_ajout" class="modal">
+    <div id="modal_ajout" class="modal-custom">
         <!-- Modal content -->
         <div class="modal-content">
 
