@@ -297,6 +297,20 @@ input[type=text], input[type=password] {
     cursor:pointer;
 }
 
+.edit_pdf{
+   float: right;
+    cursor: pointer;
+    position: absolute;
+    top: 257px;
+    right: 101px;
+}
+
+
+#edt_ajout{
+        margin-left: 1%;
+    margin-top: 17px;
+    cursor: pointer;
+}
 /* The Modal (background) */
 .modal-custom {
     display: none; /* Hidden by default */
@@ -409,7 +423,7 @@ tr:nth-child(even) {
 
 .lead {
     font-family: Time new roman;
-    color: black;
+    color: #ddd;
 }
 
 

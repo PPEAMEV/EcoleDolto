@@ -17,19 +17,24 @@
     <footer>
         <ligne id="footer_tel">Tél. 02 97 66 90 70</ligne>
     </footer>
-    <conseils>
-        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf"><date>15 novembre 2016</date><fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier></conseil>
-    </conseils>
-     <LES_EDT>
-        <edt>
+        <edts>
+        <edt id_edt="Emploi du temps">
             <titre>Emploi du temps</titre>
-         <src>donnees/pdf/EDT.pdf</src>   
+         <fichier>donnees/pdf/EDT.pdf</fichier>   
         </edt>
-        <edt>
+        <edt id_edt="Horaires de l'école">
             <titre>Horaires de l'école</titre>
-         <src>donnees/pdf/horaires de l'école.pdf</src>   
+         <fichier>donnees/pdf/horaires de l'école.pdf</fichier>   
         </edt>
-    </LES_EDT>
+    </edts>
+    <conseils>
+        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf">
+            <date>15 novembre 2016</date>
+            <fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier>
+        </conseil>
+    </conseils>
+
+    
     
     <items_activite>
         <item>

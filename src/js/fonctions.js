@@ -134,24 +134,69 @@ jQuery(document).ready(function ($) {
 
 
 
-        // GESTION DE LA MODIFICATION D'UN CONSEIL
-        // When the user clicks the button, open the modal for EDIT TEXT
-        $(".edit").click(function () {
+  
+
+    }else if ($(".container_edt")[0]) {
+        var modalTexte = document.getElementById('modal-conseil');
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+        $("#edt_ajout").click(function () {
+            modalTexte.style.display = "block";
+            $('#form-conseil').attr('action', 'index.php?uc=horairs_EDT&action=updateXml');
+        });
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modalTexte.style.display = "none";
+            $("textarea#contenu_date").val("");
+            $("#link-pdf").css("display", "none");
+
+        };
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target === modalTexte) {
+                modalTexte.style.display = "none";
+            }
+        };
+
+        // GESTION DE LA SUPPRESSION D'UN CONSEIL
+        var theHREF;
+
+        $(".confirmModalLink").click(function (e) {
+            e.preventDefault();
+            theHREF = $(this).attr("href");
+            $("#confirmModal").modal("show");
+        });
+
+        $("#confirmModalNo").click(function (e) {
+            $("#confirmModal").modal("hide");
+        });
+
+        $("#confirmModalYes").click(function (e) {
+            window.location.href = theHREF;
+        });
+
+        
+        
+        
+         //ahmad: pour gérer la côté admin de la page horaires et 
+        // EDT
+        
+        $(".edit_pdf").click(function () {
             modalTexte.style.display = "block";
             $("#link-pdf").css("display", "inline");
-            $('#form-conseil').attr('action', 'index.php?uc=conseils&action=modifXml');
+            $('#form-conseil').attr('action', 'index.php?uc=horairs_EDT&action=modif_EDT');
             var request = new XMLHttpRequest();
             request.open("GET", "donnees/xml/bdd.xml", false);
             request.setRequestHeader("Cache-Control", "no-cache");
             request.send();
             var xml = request.responseXML;
             var $xml = $(xml);
-            var conseil = $xml.find('conseil[id="' + this.id + '"]');
-            var date = conseil.find('date').text();
-            var fichier = conseil.find('fichier').text();
-            $("textarea#contenu_date").val(date);
+            var LES_EDT = $xml.find('edt[id_edt="' + this.id-edt + '"]');
+            var titre = LES_EDT.find('titre').text();
+            var fichier = LES_EDT.find('fichier').text();
+            $("textarea#contenu_titre").val(titre);
             $("#link-pdf").attr("href", "donnees/pdf/" + fichier);
-            $('#id_hidden').val(this.id);
+            $('#id_hidden').val(this.id-edt);
             $('#pdf-actuel').val(fichier);
         });
 
