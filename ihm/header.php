@@ -40,7 +40,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="#">Classe passerelle</a></li>
-                      <li><a href="#">Petite section</a></li>
+                      <li><a href="index.php?uc=petite_section">Petite section</a></li>
                       <li><a href="#">Moyenne section</a></li>
                       <li><a href="#">Grande section</a></li>
                       <li><a href="index.php?uc=cantine">Cantine</a></li>

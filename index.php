@@ -34,6 +34,11 @@ switch($controleur) {
         include("controleurs/c_activites.php");
         break;
     }
+    case 'petite_section': {
+        include("controleurs/c_petite_section.php");
+        break;
+    }
+    
 }
 
 ?>
