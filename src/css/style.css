@@ -447,3 +447,14 @@ iframe {
         height: 100px;
     }
 }
+
+/*------------- presentations ------------------*/
+@font-face {
+    font-family: "school";
+    src: url("C:/xampp/htdocs/EcoleDolto/donnees/fonts/kindergarten.ttf") format("truetype");
+}
+
+.section{
+    font-family: "school";
+    text-align: center;
+}

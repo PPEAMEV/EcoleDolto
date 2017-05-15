@@ -58,4 +58,15 @@
             <text>Explorer le monde du vivant, des objets et de la matière À leur entrée à l’école maternelle.</text>
         </item>
     </items_activite>
+    
+    <petite_section>
+        <ligne id="ps_maitresse">Notre maitresse de petite section</ligne>
+        <ligne id="ps_image_maitresse">mmeProf.jpg</ligne>
+        <ligne id="ps_ligne1">what a good beeeer</ligne>
+        <ligne id="ps_image_ligne1">Jellyfish.jpg</ligne>
+        <ligne id="ps_ligne2">Salle de sieste</ligne>
+        <ligne id="ps_image_ligne2">dortoir_ps.jpg</ligne>
+        <ligne id="ps_presentation_section">La classe de Petite section</ligne>
+        <ligne id="ps_phrase_section">La classe de Petite section</ligne>
+    </petite_section>
 </root>

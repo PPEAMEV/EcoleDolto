@@ -16,10 +16,11 @@ function recupXml() {
 }
 
 /**
- * récupère les données modifiables de l'accueil
+ * récupère les données modifiables
  * @param type $fichier
  * @return type
  */
+// Accueil
 function accueil($fichier) {
     $lignes[0] = (string) $fichier->accueil->ligne[0];
     $lignes[1] = (string) $fichier->accueil->ligne[2];
@@ -34,6 +35,22 @@ function images_accueil($fichier) {
     return $images;
 }
 
+//Petite section
+function ps($fichier) {
+    $lignes[0] = (string) $fichier->petite_section->ligne[0];
+    $lignes[1] = (string) $fichier->petite_section->ligne[2];
+    $lignes[2] = (string) $fichier->petite_section->ligne[4];
+    $lignes[3] = (string) $fichier->petite_section->ligne[7];
+    $lignes[4] = (string) $fichier->petite_section->ligne[8];
+    return $lignes;
+}
+
+function images_ps($fichier) {
+    $images[0] = (string) $fichier->petite_section->ligne[1];
+    $images[1] = (string) $fichier->petite_section->ligne[3];
+    $images[2] = (string) $fichier->petite_section->ligne[5];
+    return $images;
+}
 /**
  * récupère les données modifiables du footer
  * @param type $fichier

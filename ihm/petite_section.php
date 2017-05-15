@@ -5,8 +5,13 @@ $images = images_ps($fichier);
 $ligne = footer($fichier);
 ?>
 
-<div id="section">
-     <h1><span class="lettre-bleu">P</span>etite <span class="lettre-orange">s</span>ection</h1>
+<div class="section">
+    <h1>
+        <?php echo nl2br($lignes[3]);?>
+    </h1>
+    <p>
+        <?php echo nl2br($lignes[4]);?>
+    </p>
 </div>
 <div class="center-block">
     <div class="maitresse">

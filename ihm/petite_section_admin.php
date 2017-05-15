@@ -8,7 +8,16 @@ include_once ('src/modals/modal_text.php');
 include_once ('src/modals/modal_img.php');
 ?>
     
-    
+<div class="section">
+    <h1>
+        <img id="ps_presentation_section" class="edit" src="donnees/img/edit.png" />
+        <?php echo nl2br($lignes[3]);?>
+    </h1>
+    <p>
+        <img id="ps_phrase_section" class="edit" src="donnees/img/edit.png" />
+        <?php echo nl2br($lignes[4]);?>
+    </p>
+</div>
     <div class="center-block">
         <div class="maitresse">
                 <img id="ps_image_maitresse" class="img" src="donnees/img/edit.png" />
