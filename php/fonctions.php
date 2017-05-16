@@ -16,10 +16,11 @@ function recupXml() {
 }
 
 /**
- * récupère les données modifiables de l'accueil
+ * récupère les données modifiables
  * @param type $fichier
  * @return type
  */
+// Accueil
 function accueil($fichier) {
     $lignes[0] = (string) $fichier->accueil->ligne[0];
     $lignes[1] = (string) $fichier->accueil->ligne[2];
@@ -34,6 +35,22 @@ function images_accueil($fichier) {
     return $images;
 }
 
+//Petite section
+function ps($fichier) {
+    $lignes[0] = (string) $fichier->petite_section->ligne[0];
+    $lignes[1] = (string) $fichier->petite_section->ligne[2];
+    $lignes[2] = (string) $fichier->petite_section->ligne[4];
+    $lignes[3] = (string) $fichier->petite_section->ligne[7];
+    $lignes[4] = (string) $fichier->petite_section->ligne[8];
+    return $lignes;
+}
+
+function images_ps($fichier) {
+    $images[0] = (string) $fichier->petite_section->ligne[1];
+    $images[1] = (string) $fichier->petite_section->ligne[3];
+    $images[2] = (string) $fichier->petite_section->ligne[5];
+    return $images;
+}
 /**
  * récupère les données modifiables du footer
  * @param type $fichier
@@ -326,16 +343,17 @@ function supprXmlConseils($id) {
 }
 
 //ahmad:pour modfier la xml la même que fuction ajoutXml mais j'ai la modifie pour adapter avec mes elements
-function updateXml($titre, $src) {
+function updateXml($titre, $fichier) {
     $dom = new DOMDocument();
     $dom->load('donnees/xml/bdd.xml');
     $newNode = $dom->createElement('edt');
+      $newNode->setAttribute("id_edt", $fichier);
     $subNodesTitre = $dom->createElement('titre', $titre);
-    $subNodesSrc = $dom->createElement('src', $src);
+    $subNodesfichier = $dom->createElement('fichier', $fichier);
     $newNode->appendChild($subNodesTitre);
-    $newNode->appendChild($subNodesSrc);
-    $LES_EDT = $dom->getElementsByTagName('LES_EDT')[0];
-    $LES_EDT->appendChild($newNode);
+    $newNode->appendChild($subNodesfichier);
+    $edts = $dom->getElementsByTagName('edts')[0];
+    $edts->appendChild($newNode);
     $dom->save('donnees/xml/bdd.xml');
 }
 
@@ -345,11 +363,25 @@ function getPdfs($fichier) {
     $listePdfs = array();
     foreach ($fichier->xpath('//edt') as $edt) {
         $listePdfs[$i][0] = $edt->titre;
-        $listePdfs[$i][1] = $edt->src;
+        $listePdfs[$i][1] = $edt->fichier;
 
         $i++;
     }
     return $listePdfs;
+}
+function modif_EDT($id_edt , $titre, $fichier) {
+    $dom = new DOMDocument();
+    $dom->load('donnees/xml/bdd.xml');
+    $newNode = $dom->createElement('edt');
+    $newNode->setAttribute("id_edt", $fichier);
+    $subNodesTitre = $dom->createElement('titre', $titre);
+    $subNodesFichier = $dom->createElement('fichier', $fichier);
+    $newNode->appendChild($subNodesTitre);
+    $newNode->appendChild($subNodesFichier);
+    $xp = new DOMXPath($dom);
+    $oldNode = $xp->query('//*[@id_edt="' . $id_edt . '"]')->item(0);
+    $oldNode->parentNode->replaceChild($newNode, $oldNode);
+    $dom->save('donnees/xml/bdd.xml');
 }
 
 //function pour recuprer les liste des itemes 

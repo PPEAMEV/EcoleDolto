@@ -11,8 +11,16 @@ $listeItems = getItems($fichier);
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div id="slide" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#slide" data-slide-to="0" class="active"></li>
+                        <li data-target="#slide" data-slide-to="1"></li>
+                        <li data-target="#slide" data-slide-to="2"></li>
+                    </ol>  
                     <div class="carousel-inner" role="listbox">
+
                         <div class="item active">
+
                             <img class="center-block" src="<?php echo$listeItems[0][0]; ?>"
                                  style="" alt="activité">
                             <div class="carousel-caption">
@@ -45,7 +53,6 @@ $listeItems = getItems($fichier);
                             </div>
 
                         </div>
-
 
 
                     </div>
