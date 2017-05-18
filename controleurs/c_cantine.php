@@ -13,10 +13,13 @@ if (!isset($_GET['action'])) {
 $action = $_GET['action'];
 switch ($action) {
     case 'cantine':
+        include_once("ihm/header.php");
         if ($estConnecte) {
             include_once("ihm/cantine.php");
+            include_once 'ihm/footer_admin.php';
         } else {
             include_once("ihm/cantine.php");
+            include_once 'ihm/footer.php';
         }
         break;
    

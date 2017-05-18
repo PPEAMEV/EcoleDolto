@@ -1,26 +1,18 @@
-<?php
-include_once 'ihm/header.php';
-$ligne = footer($fichier);
-$LES_EDT = getPdfs($fichier);
-?>
 
 
-        <div class="container">
 
-        <?php  foreach($LES_EDT as $edt){  ?>
+<div class="container">
+
+    <?php foreach ($LES_EDT as $edt) { ?>
         <h3><?php echo $edt[0] ?></h3>
-                
-        <iframe id="edt"  src="<?php echo $edt[1]  ?>" alt=”pdf” ></iframe>
+
+        <iframe id="edt"  src="<?php echo $edt[1] ?>" alt=”pdf” ></iframe>
 
         <br>
         <hr>
         <br>
 
-                <?php } ?>
-     </div>
+    <?php } ?>
+</div>
 
 
-
-
-<?php
-include_once 'ihm/footer.php';

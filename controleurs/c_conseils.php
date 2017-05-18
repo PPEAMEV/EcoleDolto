@@ -6,11 +6,17 @@ if (!isset($_GET['action'])) {
 $action = $_GET['action'];
 switch ($action) {
     case 'conseils':
+        include_once 'ihm/header.php';
+        $ligne = footer($fichier);
+        $conseils = getConseils($fichier);
         if ($estConnecte) {
             include_once("ihm/conseils_admin.php");
+            include_once 'ihm/footer_admin.php';
         } else {
             include_once("ihm/conseils.php");
+            include_once 'ihm/footer.php';
         }
+        
         break;
     case 'ajoutXml':
         if (isset($_POST['date']) && isset($_FILES['pdf']) && ($_FILES['pdf']['error'] == 0)) {
@@ -18,7 +24,7 @@ switch ($action) {
             $fichierIni = $_FILES['pdf']['name'];
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
             upload_file();
-            ajoutXml($date,$fichier);
+            ajoutXml($date, $fichier);
             $fichier = recupXml();
         }
         include_once("ihm/conseils_admin.php");
@@ -40,10 +46,9 @@ switch ($action) {
             }
             $id = $_POST['id-conseil'];
             $date = $_POST['date'];
-            modifXmlConseils($id,$date,$fichier);
+            modifXmlConseils($id, $date, $fichier);
             $fichier = recupXml();
         }
         include_once("ihm/conseils_admin.php");
-        
 }
 

@@ -1,8 +1,4 @@
-<?php
-include_once 'ihm/header.php';
-$ligne = footer($fichier);
-$conseils = getConseils($fichier);
-?>
+
 
 <div class="container">
     <table>
@@ -20,8 +16,3 @@ $conseils = getConseils($fichier);
         ?>
       </table>
 </div>
-
-
-
-<?php
-include_once 'ihm/footer.php';

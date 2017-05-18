@@ -17,6 +17,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="src/js/jquery-ui.min.js"></script>
         <script src="src/js/fonctions.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet"> 
     </head>
     <body>
         <header class="container">
@@ -27,33 +28,41 @@
 
         <nav class="navbar navbar-default">
             <div class="navcontainer container">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barre-nav">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
-                </button>
-                <a class="navbar-brand" href="#">Ecole Dolto</a>
-              </div>
-              <div class="collapse navbar-collapse" id="barre-nav">
-                <ul class="nav navbar-nav">
-                  <li class="rouge"><a href="index.php?uc=accueil">Accueil</a></li>
-                  <li class="dropdown bleu">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Classe passerelle</a></li>
-                      <li><a href="index.php?uc=petite_section">Petite section</a></li>
-                      <li><a href="#">Moyenne section</a></li>
-                      <li><a href="#">Grande section</a></li>
-                      <li><a href="index.php?uc=cantine">Cantine</a></li>
-                      <li><a href="index.php?uc=activites">Activités</a></li>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barre-nav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">Ecole Dolto</a>
+                </div>
+                <div class="collapse navbar-collapse" id="barre-nav">
+                    <ul class="nav navbar-nav">
+                        <li class="rouge"><a href="index.php?uc=accueil">Accueil</a></li>
+                        <li class="dropdown bleu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Classe passerelle</a></li>
+                                <li><a href="index.php?uc=petite_section">Petite section</a></li>
+                                <li><a href="#">Moyenne section</a></li>
+                                <li><a href="#">Grande section</a></li>
+                                <li><a href="index.php?uc=cantine">Cantine</a></li>
+                                <li><a href="index.php?uc=activites">Activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="orange" href="index.php?uc=HEDT">Horaires et emplois du temps</a></li>
+                        <li><a class="rouge" href="#">Inscriptions</a></li>
+                        <li><a class="bleu" href="index.php?uc=conseils">Conseils d'école</a></li>
+                        <li><a class="orange fin-nav" href="index.php?uc=plan_d_acces">Plan d'accès</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> <?php if (estConnecte()) {
-    echo "Déconnexion";
-} else {
-    echo "Admin";
-}; ?> </a></li>
+                        <li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> <?php
+                                if (estConnecte()) {
+                                    echo "Déconnexion";
+                                } else {
+                                    echo "Admin";
+                                };
+                                ?> </a></li>
                     </ul>
                 </div>
             </div>

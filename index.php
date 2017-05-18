@@ -26,7 +26,7 @@ switch($controleur) {
         include("controleurs/c_plan_d_acces.php");
       break;
     }
-    case 'horaires et emplois du temps': {
+    case 'HEDT': {
         include("controleurs/c_horairs_EDT.php");
       break;
     }
