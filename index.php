@@ -48,6 +48,11 @@ switch($controleur) {
         break;
     }
     
+    case 'grande_section': {
+        include("controleurs/c_grande_section.php");
+        break;
+    }
+    
     case 'inscription': {
         include("controleurs/c_inscription.php");
     }

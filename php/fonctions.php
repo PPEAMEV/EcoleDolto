@@ -69,6 +69,23 @@ function images_ms($fichier) {
     return $images;
 }
 
+//Grande section
+function gs($fichier) {
+    $lignes[0] = (string) $fichier->grande_section->ligne[0];
+    $lignes[1] = (string) $fichier->grande_section->ligne[2];
+    $lignes[2] = (string) $fichier->grande_section->ligne[4];
+    $lignes[3] = (string) $fichier->grande_section->ligne[6];
+    $lignes[4] = (string) $fichier->grande_section->ligne[7];
+    return $lignes;
+}
+
+function images_gs($fichier) {
+    $images[0] = (string) $fichier->grande_section->ligne[1];
+    $images[1] = (string) $fichier->grande_section->ligne[3];
+    $images[2] = (string) $fichier->grande_section->ligne[5];
+    return $images;
+}
+
 // données de l'inscription
 function inscription($fichier) {
     $inscription[0] = (string) $fichier->inscription->ligne[0];

@@ -12,7 +12,7 @@
     </div>
     <div class="center-block">
         <div class="maitresse">
-            <?php modeAdmin($estConnecte, "ms_image_maitresse", "edit_text") ?>
+            <?php modeAdmin($estConnecte, "ms_image_maitresse", "edit_doc") ?>
             <img src="donnees/img/<?php echo $images[0] ?>" alt="" />
             <p>
                 <?php echo nl2br($lignes[0]); ?>

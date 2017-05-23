@@ -89,4 +89,15 @@
         <ligne id="ms_presentation_section">La classe de Moyenne section</ligne>
         <ligne id="ms_phrase_section">La classe de Moyenne section</ligne>
     </moyenne_section>
+    
+    <grande_section>
+        <ligne id="gs_maitresse">Notre maître de grande section</ligne>
+        <ligne id="gs_image_maitresse">004756611.jpg</ligne>
+        <ligne id="gs_ligne1">Bientôt à écrire</ligne>
+        <ligne id="gs_image_ligne1">laurence_ms_gs_ateliers_03.jpg</ligne>
+        <ligne id="gs_ligne2">Vive la récré</ligne>
+        <ligne id="gs_image_ligne2">cours_recreation_07.jpg</ligne>
+        <ligne id="gs_presentation_section">La classe de Grande section</ligne>
+        <ligne id="gs_phrase_section">La classe de Grande section</ligne>
+    </grande_section>
 </root>
