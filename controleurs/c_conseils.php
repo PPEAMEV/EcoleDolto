@@ -16,7 +16,7 @@ switch ($action) {
             include_once("ihm/conseils.php");
             include_once 'ihm/footer.php';
         }
-        
+
         break;
     case 'ajoutXml':
         if (isset($_POST['date']) && isset($_FILES['pdf']) && ($_FILES['pdf']['error'] == 0)) {
@@ -27,13 +27,21 @@ switch ($action) {
             ajoutXml($date, $fichier);
             $fichier = recupXml();
         }
+        include_once 'ihm/header.php';
+        $ligne = footer($fichier);
+        $conseils = getConseils($fichier);
         include_once("ihm/conseils_admin.php");
+        include_once 'ihm/footer_admin.php';
         break;
     case 'supprimer':
         $id = $_GET['id'];
         supprXmlConseils($id);
         $fichier = recupXml();
+        include_once 'ihm/header.php';
+        $ligne = footer($fichier);
+        $conseils = getConseils($fichier);
         include_once("ihm/conseils_admin.php");
+        include_once 'ihm/footer_admin.php';
         break;
     case 'modifXml':
         if (isset($_POST['date']) && isset($_POST['id-conseil'])) {
@@ -49,6 +57,10 @@ switch ($action) {
             modifXmlConseils($id, $date, $fichier);
             $fichier = recupXml();
         }
+        include_once 'ihm/header.php';
+        $ligne = footer($fichier);
+        $conseils = getConseils($fichier);
         include_once("ihm/conseils_admin.php");
+        include_once 'ihm/footer_admin.php';
 }
 

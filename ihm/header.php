@@ -51,7 +51,7 @@
                             </ul>
                         </li>
                         <li><a class="orange" href="index.php?uc=HEDT">Horaires et emplois du temps</a></li>
-                        <li><a class="rouge" href="#">Inscriptions</a></li>
+                        <li><a class="rouge" href="index.php?uc=inscription">Inscriptions</a></li>
                         <li><a class="bleu" href="index.php?uc=conseils">Conseils d'école</a></li>
                         <li><a class="orange fin-nav" href="index.php?uc=plan_d_acces">Plan d'accès</a></li>
                     </ul>

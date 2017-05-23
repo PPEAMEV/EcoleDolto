@@ -6,7 +6,7 @@
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div class="left texte">
-                    <img id="plan_ligne" class="edit_text" src="donnees/img/edit.png" />
+                    <img id="acces" class="edit_text" src="donnees/img/edit.png" />
                     <p>L'école se situe à côté du centre ville, en face de l'école primaire et se trouve dans une rue piétonne, assurant ainsi la sécurité des enfants.</p>   
                     <h1>Adresse:</h1><br>
                     <p>

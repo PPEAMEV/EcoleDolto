@@ -35,7 +35,7 @@ switch ($action) {
                         $contenu = preg_replace("` `i", "", $fichier);
                     }
                 }
-                modifXmlAccueil($id, $contenu);
+                modifXml($id, $contenu);
                 $fichier = recupXml(); //récupération du fichier xml pour qu'il s'affiche instantanément dans la page suite à la modif
             }
             include_once("ihm/header.php");

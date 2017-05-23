@@ -17,21 +17,33 @@
     <footer>
         <ligne id="footer_tel">Tél. 02 97 66 90 70</ligne>
     </footer>
-        <edts>
+    <edts>
         <edt id_edt="Emploi du temps">
             <titre>Emploi du temps</titre>
-         <fichier>donnees/pdf/EDT.pdf</fichier>   
+            <fichier>donnees/pdf/EDT.pdf</fichier>   
         </edt>
         <edt id_edt="Horaires de l'école">
             <titre>Horaires de l'école</titre>
-         <fichier>donnees/pdf/horaires de l'école.pdf</fichier>   
+            <fichier>donnees/pdf/horaires de l'école.pdf</fichier>   
         </edt>
     </edts>
     <conseils>
-        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf"><date>15 novembre 2016</date><fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier></conseil>
+        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf">
+            <date>15 novembre 2016</date>
+            <fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier>
+        </conseil>
     </conseils>
-
-    
+    <plan>
+        <ligne id="acces">L'école se situe à côté du centre ville, en face de l'école primaire et se trouve dans une rue piétonne, assurant ainsi la sécurité des enfants.</ligne>
+    </plan>
+    <inscription>
+        <ligne id="text_inscription">&#13;
+            Sed tamen haec cum ita tutius observentur, quidam vigore artuum inminuto rogati ad nuptias ubi aurum dextris manibus cavatis offertur, inpigre vel usque Spoletium pergunt. haec nobilium sunt instituta.&#13;
+            Illud tamen clausos vehementer angebat quod captis navigiis, quae frumenta vehebant per flumen, Isauri quidem alimentorum copiis adfluebant, ipsi vero solitarum rerum cibos iam consumendo inediae propinquantis aerumnas exitialis horrebant.&#13;
+            Duplexque isdem diebus acciderat malum, quod et Theophilum insontem atrox interceperat casus, et Serenianus dignus exsecratione cunctorum, innoxius, modo non reclamante publico vigore, discessit!!!&#13;
+        </ligne>
+        <ligne id="lien_inscription">https://www.sene.bzh/</ligne>
+    </inscription>
     
     <items_activite>
         <item>
@@ -44,7 +56,7 @@
             <titre>NOEL</titre>
             <text>joyeux noël.</text>
         </item>
-         <item>
+        <item>
             <img_src>donnees/img/ecole-maternelle.jpg</img_src>
             <titre>Ensemble</titre>
             <text>Les conseils de famili pour passer une année sans soucis Pour faciliter la vie de votre enfant à l'école.</text>
