@@ -349,14 +349,14 @@ input[type=text], input[type=password] {
     cursor: pointer;
 }
 
-.edit_text {
-       position: relative;
+.edit_inline {
+    position: relative;
     left: 372px;
 
-    
+
 }
 
-.edit_doc {
+.edit_block {
     position: absolute;
     float: none;
     top: 3px;
@@ -366,7 +366,9 @@ input[type=text], input[type=password] {
 
 }
 
-
+.maitresse{
+    position:relative;
+}
 /*----------------------------------------
 ----------------CONSEILS------------------
 ----------------------------------------*/
@@ -471,6 +473,7 @@ iframe {
 
 #container_inscription {
     margin: 0 auto;
+    position: relative;
 }
 
 #corps_inscription {
