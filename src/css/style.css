@@ -330,7 +330,7 @@ input[type=text], input[type=password] {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
     max-height: 450px;
 }
 
@@ -349,14 +349,26 @@ input[type=text], input[type=password] {
     cursor: pointer;
 }
 
-.edit_text {
+.edit_inline {
     position: relative;
-    float: none;
-    top: -3px;
-    right: -3px;
+    left: 372px;
+
+
 }
 
+.edit_block {
+    position: absolute;
+    float: none;
+    top: 3px;
+    right: 3px;
+    margin-top: auto;
+    margin-left: auto;
 
+}
+
+.maitresse{
+    position:relative;
+}
 /*----------------------------------------
 ----------------CONSEILS------------------
 ----------------------------------------*/
@@ -461,6 +473,7 @@ iframe {
 
 #container_inscription {
     margin: 0 auto;
+    position: relative;
 }
 
 #corps_inscription {
