@@ -13,13 +13,9 @@ switch ($action) {
             if ($estConnecte) {
                 include_once ('src/modals/modal_text.php');
                 include_once ('src/modals/modal_doc.php');
-                include_once("ihm/inscription.php");
-                include_once 'ihm/footer_admin.php';
-            } else {
-                include_once("ihm/inscription.php");
-                include_once 'ihm/footer.php';
             }
-
+            include_once("ihm/inscription.php");
+            include_once 'ihm/footer.php';
             break;
         }
     case 'majXml': {
@@ -36,7 +32,7 @@ switch ($action) {
             include_once ('src/modals/modal_text.php');
             include_once ('src/modals/modal_doc.php');
             include_once 'ihm/inscription.php';
-            include_once 'ihm/footer_admin.php';
+            include_once 'ihm/footer.php';
             break;
         }
 }

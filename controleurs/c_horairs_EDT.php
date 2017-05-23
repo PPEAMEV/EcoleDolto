@@ -11,7 +11,7 @@ switch ($action) {
         $LES_EDT = getPdfs($fichier);
         if ($estConnecte) {
             include_once("ihm/horairs_EDT_admin.php");
-            include_once 'ihm/footer_admin.php';
+            include_once 'ihm/footer.php';
         } else {
             include_once("ihm/horairs_EDT.php");
             include_once 'ihm/footer.php';

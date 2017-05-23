@@ -9,13 +9,8 @@ switch ($action) {
         include_once 'ihm/header.php';
         $ligne = footer($fichier);
         $conseils = getConseils($fichier);
-        if ($estConnecte) {
-            include_once("ihm/conseils_admin.php");
-            include_once 'ihm/footer_admin.php';
-        } else {
-            include_once("ihm/conseils.php");
-            include_once 'ihm/footer.php';
-        }
+        include_once("ihm/conseils.php");
+        include_once 'ihm/footer.php';
 
         break;
     case 'ajoutXml':
@@ -40,8 +35,8 @@ switch ($action) {
         include_once 'ihm/header.php';
         $ligne = footer($fichier);
         $conseils = getConseils($fichier);
-        include_once("ihm/conseils_admin.php");
-        include_once 'ihm/footer_admin.php';
+        include_once("ihm/conseils.php");
+        include_once 'ihm/footer.php';
         break;
     case 'modifXml':
         if (isset($_POST['date']) && isset($_POST['id-conseil'])) {
@@ -60,7 +55,7 @@ switch ($action) {
         include_once 'ihm/header.php';
         $ligne = footer($fichier);
         $conseils = getConseils($fichier);
-        include_once("ihm/conseils_admin.php");
-        include_once 'ihm/footer_admin.php';
+        include_once("ihm/conseils.php");
+        include_once 'ihm/footer.php';
 }
 

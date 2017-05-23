@@ -19,7 +19,7 @@ switch ($action) {
         if ($estConnecte) {
             include_once ('src/modals/modal_text.php');
             include_once("ihm/plan_d_acces.php");
-            include_once 'ihm/footer_admin.php';
+            include_once 'ihm/footer.php';
         } else {
             include_once("ihm/plan_d_acces.php");
             include_once 'ihm/footer.php';
@@ -38,7 +38,7 @@ switch ($action) {
         include_once ('src/modals/modal_text.php');
         include_once ('src/modals/modal_doc.php');
         include_once("ihm/plan_d_acces.php");
-        include_once("ihm/footer_admin.php");
+        include_once("ihm/footer.php");
         break;
 }
 
