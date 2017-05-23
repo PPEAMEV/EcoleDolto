@@ -1,11 +1,3 @@
-<?php 
-
-include_once("header.php");
-$lignes = accueil($fichier);
-$images = images_accueil($fichier);
-$ligne = footer($fichier);
-
-?>
 
         <div class="container">
             <div class="ligne ligne-rouge">
@@ -33,5 +25,3 @@ $ligne = footer($fichier);
                 </div>
             </div>
         </div>
-
-<?php include_once("footer.php");?>

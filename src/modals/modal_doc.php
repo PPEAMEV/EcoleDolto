@@ -1,18 +1,20 @@
 
 <!-- Fenêtre modale générale pour l'image et une previsualisation -->
-<div id="modal_img" class="modal"> 
+<div id="modal_doc" class="modal" > 
     <!-- Modal content -->
    <div class="modal-content">
-        <span class="close">&times;</span>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modifier l'article</h4>
+        </div>
         <!--<div class="col-md-8">-->
             <div class="row">
-                <form id="my_form_img" class="form-horizontal well" method="post" action="index.php?uc=accueil&action=majXml" enctype="multipart/form-data">
+                <form id="form_doc" class="form-horizontal well" method="post" action="<?php echo $url;?>" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>Modifier l'image</legend>
                         <div class="form-group">
-                            <label for="image" class="col-lg-2 control-label">Illustration</label>
+                            <label for="content" class="col-lg-2 control-label">Fichier</label>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" name="image" accept="image/*">
+                                <input type="file" class="form-control" name="doc" accept="image/*,application/pdf">
                             </div>
                         </div>
 
@@ -24,7 +26,7 @@
                             </div>
                         </div>
 
-                        <input id="id_hidden_img" type="hidden" name="id_ligne" />
+                        <input id="id_hidden_doc" type="hidden" name="id_ligne" />
 
                     </fieldset>
                 </form>

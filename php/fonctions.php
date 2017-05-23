@@ -40,8 +40,8 @@ function ps($fichier) {
     $lignes[0] = (string) $fichier->petite_section->ligne[0];
     $lignes[1] = (string) $fichier->petite_section->ligne[2];
     $lignes[2] = (string) $fichier->petite_section->ligne[4];
-    $lignes[3] = (string) $fichier->petite_section->ligne[7];
-    $lignes[4] = (string) $fichier->petite_section->ligne[8];
+    $lignes[3] = (string) $fichier->petite_section->ligne[6];
+    $lignes[4] = (string) $fichier->petite_section->ligne[7];
     return $lignes;
 }
 
@@ -134,13 +134,12 @@ function up_error($code, $nom) {
   type : le type mime du fichier sélectionné par le client
   error : l'erreur rapportée par php lors de l'upload de l'image */
 function upload_img() {
-    if (isset($_FILES['image'])) {
         //$_FILES existe on récupère les infos qui nous intéressent
-        $fichier = $_FILES['image']['name']; //nom réel de l'image
-        $size = $_FILES['image']['size']; //poid de l'image en octets
-        $tmp = $_FILES['image']['tmp_name']; //nom temporaire de l'image (sur le serveur)
-        $type = $_FILES['image']['type']; //type de l'image
-        $error = $_FILES['image']['error'];
+        $fichier = $_FILES['doc']['name']; //nom réel de l'image
+        $size = $_FILES['doc']['size']; //poid de l'image en octets
+        $tmp = $_FILES['doc']['tmp_name']; //nom temporaire de l'image (sur le serveur)
+        $type = $_FILES['doc']['type']; //type de l'image
+        $error = $_FILES['doc']['error'];
         $retour = up_error($error, $fichier);
         //$nom_final=" ";
         if ($retour[0] === true) {
@@ -165,7 +164,7 @@ function upload_img() {
                     //on déplace l'image dans le répertoire final
                     move_uploaded_file($tmp, './donnees/img/' . $fichier);
                     //Message indiquant que tout s'est bien passé
-                    echo "L'image a été uploadée avec succès<br/>";
+//                    echo "L'image a été uploadée avec succès<br/>";
                 } else {
                     //Le type mime, ou la taille ou le poids est incorrect
                     echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
@@ -174,7 +173,6 @@ function upload_img() {
                 echo $retour[1], '<br />';
             }
         }
-    }
     /* //Pour tester si l'image est bien à sa place
       echo '<img src="./donnees/img/' . $fichier . '" border="0" />';
       echo '<br/>';

@@ -1,11 +1,5 @@
-<?php
-include_once 'ihm/header.php';
-$ligne = footer($fichier);
-$conseils = getConseils($fichier);
-?>
 
 <section>
-
 
 
     <div id="modal-conseil" class="modal-custom">
@@ -100,5 +94,3 @@ $conseils = getConseils($fichier);
         </div>
     </div>
 
-<?php
-include_once 'ihm/footer_admin.php';

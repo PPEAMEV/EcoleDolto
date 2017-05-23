@@ -221,7 +221,7 @@ footer h1 {
 ------------------------------------------------------*/
 
 #formConnexion {
-    width: 200px;
+    width: 210px;
     margin:auto;
     padding: 20px;
 }
@@ -332,7 +332,7 @@ input[type=text], input[type=password] {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
     max-height: 450px;
 }
 
@@ -351,11 +351,23 @@ input[type=text], input[type=password] {
     cursor: pointer;
 }
 
-#footer_tel {
-    position: relative;
+.edit_text {
+    position: absolute;
     float: none;
-    top: -3px;
-    right: -3px;
+    top: 3px;
+    right: 3px;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.edit_doc {
+    position: absolute;
+    float: none;
+    top: 3px;
+    right: 3px;
+    margin-top: auto;
+    margin-left: auto;
+
 }
 
 
@@ -451,10 +463,12 @@ iframe {
 /*------------- presentations ------------------*/
 @font-face {
     font-family: "school";
-    src: url("C:/xampp/htdocs/EcoleDolto/donnees/fonts/kindergarten.ttf") format("truetype");
+    src: url("/donnees/fonts/kindergarten.ttf") format("truetype");
 }
 
 .section{
-    font-family: "school";
+    
+    font-family: 'Schoolbell', cursive;
+
     text-align: center;
 }

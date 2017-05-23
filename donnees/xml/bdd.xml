@@ -5,7 +5,7 @@
         <mdp>$2y$10$SZxu6b4EvvKHZZbO9T8KNOm8KWzewlWLbx/sS1vBImBiezNtApyEy</mdp>
     </admin>
     <accueil>
-        <ligne id="accueil_ligne1">Travail en groupes avec les enfants sur des projets éducatifs comme le projet d'école par exemple</ligne>
+        <ligne id="accueil_ligne1">Travail en groupes avec les enfants sur des projets éducatifs comme le projet d'école par exemple.</ligne>
         <ligne id="accueil_image_ligne1">claudine_ps_avant_recre.jpg</ligne>
         <ligne id="accueil_ligne2">Le personnel municipal accueil vos enfants à partir de 7h30 et jusqu'à 19h00. Les tarifs sont calculés en fonction du quotient familial. &#13;
             Après les repas, des intervenants proposent des activités variées dans le cadre du Contrat éducatif local. Les abords de l'école sont fermés à la circulation pour sécuriser les entrées et les sorties. &#13;
@@ -28,10 +28,7 @@
         </edt>
     </edts>
     <conseils>
-        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf">
-            <date>15 novembre 2016</date>
-            <fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier>
-        </conseil>
+        <conseil id="compte_rendu_CE_du_15_nov_2016.pdf"><date>15 novembre 2016</date><fichier>compte_rendu_CE_du_15_nov_2016.pdf</fichier></conseil>
     </conseils>
 
     
@@ -63,7 +60,7 @@
         <ligne id="ps_maitresse">Notre maitresse de petite section</ligne>
         <ligne id="ps_image_maitresse">mmeProf.jpg</ligne>
         <ligne id="ps_ligne1">what a good beeeer</ligne>
-        <ligne id="ps_image_ligne1">Jellyfish.jpg</ligne>
+        <ligne id="ps_image_ligne1">claudine_ps_ateliers_04.jpg</ligne>
         <ligne id="ps_ligne2">Salle de sieste</ligne>
         <ligne id="ps_image_ligne2">dortoir_ps.jpg</ligne>
         <ligne id="ps_presentation_section">La classe de Petite section</ligne>

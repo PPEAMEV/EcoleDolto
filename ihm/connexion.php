@@ -1,9 +1,4 @@
-<?php 
 
-include_once("header.php");
-$ligne = footer($fichier);
-
-?>
 
 <div id="connexion" class="container">
     <h1>Connexion</h1>
@@ -26,7 +21,4 @@ if ($err_connexion) {
     ?> <div id="err_connexion">Erreur de mot de passe ou de login, veuillez réessayez.</div><?php
 }
 
-
-
-include_once("footer.php");
 

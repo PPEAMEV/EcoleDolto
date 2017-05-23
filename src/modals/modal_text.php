@@ -1,15 +1,17 @@
 
 <!-- Fenêtre modale générale pour le texte -->
 <!-- The Modal -->
-<div id="modal_texte" class="modal-custom"> 
+<div id="modal_texte" class="modal" > 
     <!-- Modal content -->
    <div class="modal-content">
-        <span class="close">&times;</span>
+       <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Modifier l'article</h4>
+       </div>
 <!--    <div class="col-md-12">
             <div class="row"> -->
-                <form id="my_form" class="form-horizontal well" method="post" action="index.php?uc=accueil&action=majXml" enctype="multipart/form-data">
+                <form id="form_text" class="form-horizontal well" action="<?php echo $url;?>" method="post" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>Modifier l'article</legend>
 
                         <div class="form-group">
                             <label for="contenu" class="col-lg-2 control-label">Contenu</label>
@@ -24,7 +26,7 @@
                             </div>
                         </div>
 
-                        <input id="id_hidden" type="hidden" name="id_ligne" />
+                        <input id="id_hidden_text" type="hidden" name="id_ligne" />
 
                     </fieldset>
                 </form>
