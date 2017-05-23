@@ -402,3 +402,17 @@ function getItems($fichier) {
     }
     return $listeItems;
 }
+
+/*
+ * fonction permettant d'ajouter les boutons edit si l'utilisateur est connecté en tant qu'Administrateur
+ * @param $estConnecte : indique si l'utilisateur est connecté
+ * @param $id : id de l'endroit l'on se trouve pour l'identification para rapport au XML
+ * @param $typeCss : prend la valeur edit_block si l'on veut que le bouton applique le style .edit_block
+ */
+function modeAdmin($estConnecte,$id,$typeCss){
+    if ($estConnecte) {
+        ?>
+        <img id="<?= $id ?>" class="edit_text <?= $typeCss ?>" src="donnees/img/edit.png" /><?php
+    }   
+}
+?>
