@@ -52,6 +52,23 @@ function images_ps($fichier) {
     return $images;
 }
 
+//Moyenne section
+function ms($fichier) {
+    $lignes[0] = (string) $fichier->moyenne_section->ligne[0];
+    $lignes[1] = (string) $fichier->moyenne_section->ligne[2];
+    $lignes[2] = (string) $fichier->moyenne_section->ligne[4];
+    $lignes[3] = (string) $fichier->moyenne_section->ligne[6];
+    $lignes[4] = (string) $fichier->moyenne_section->ligne[7];
+    return $lignes;
+}
+
+function images_ms($fichier) {
+    $images[0] = (string) $fichier->moyenne_section->ligne[1];
+    $images[1] = (string) $fichier->moyenne_section->ligne[3];
+    $images[2] = (string) $fichier->moyenne_section->ligne[5];
+    return $images;
+}
+
 // données de l'inscription
 function inscription($fichier) {
     $inscription[0] = (string) $fichier->inscription->ligne[0];
@@ -407,12 +424,12 @@ function getItems($fichier) {
  * fonction permettant d'ajouter les boutons edit si l'utilisateur est connecté en tant qu'Administrateur
  * @param $estConnecte : indique si l'utilisateur est connecté
  * @param $id : id de l'endroit l'on se trouve pour l'identification para rapport au XML
- * @param $typeCss : prend la valeur edit_block si l'on veut que le bouton applique le style .edit_block
+ * @param $typeCss : prend la valeur edit_block si l'on veut que le bouton applique le style edit texte edit_block || edit_texte || edit_doc || edit_doc edit_block
  */
 function modeAdmin($estConnecte,$id,$typeCss){
     if ($estConnecte) {
         ?>
-        <img id="<?= $id ?>" class="edit_text <?= $typeCss ?>" src="donnees/img/edit.png" /><?php
+        <img id="<?= $id ?>" class="<?= $typeCss ?>" src="donnees/img/edit.png" /><?php
     }   
 }
 ?>

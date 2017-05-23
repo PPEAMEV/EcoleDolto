@@ -12,7 +12,7 @@
             L'école dispose d'une cour-jardin, d'une salle polyvalente spacieuse, d'un dortoir et de trois classes adaptées aux besoins et à l'évolution de vos enfants.</ligne>
         <ligne id="accueil_image_ligne2">claudine_ps_avant_recre_02.jpg</ligne>
         <ligne id="accueil_ligne3">L'association des parents d'élèves soutient activement les projets de l'équipe pédagogique.</ligne>
-        <ligne id="accueil_image_ligne3">nathalie_ms_gs_ateliers_02.jpg</ligne>
+        <ligne id="accueil_image_ligne3">claudine_ps_ateliers.jpg</ligne>
     </accueil>
     <footer>
         <ligne id="footer_tel">Tél. 02 97 66 90 70</ligne>
@@ -78,4 +78,15 @@
         <ligne id="ps_presentation_section">La classe de Petite section</ligne>
         <ligne id="ps_phrase_section">La classe de Petite section</ligne>
     </petite_section>
+    
+    <moyenne_section>
+        <ligne id="ms_maitresse">Notre maitresse de moyenne section</ligne>
+        <ligne id="ms_image_maitresse">14-mme-chipie.jpg</ligne>
+        <ligne id="ms_ligne1">bonjour les enfants</ligne>
+        <ligne id="ms_image_ligne1">nathalie_ms_gs_ateliers_06.jpg</ligne>
+        <ligne id="ms_ligne2">Salle de jeu</ligne>
+        <ligne id="ms_image_ligne2">claudine_ps_danse.jpg</ligne>
+        <ligne id="ms_presentation_section">La classe de Moyenne section</ligne>
+        <ligne id="ms_phrase_section">La classe de Moyenne section</ligne>
+    </moyenne_section>
 </root>
