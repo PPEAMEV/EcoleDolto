@@ -51,6 +51,14 @@ function images_ps($fichier) {
     $images[2] = (string) $fichier->petite_section->ligne[5];
     return $images;
 }
+
+// données de l'inscription
+function inscription($fichier) {
+    $inscription[0] = (string) $fichier->inscription->ligne[0];
+    $inscription[1] = (string) $fichier->inscription->ligne[1];
+    return $inscription;
+}
+
 /**
  * récupère les données modifiables du footer
  * @param type $fichier
@@ -264,7 +272,7 @@ function upload_file() {
  * @param type $id
  * @param type $contenu
  */
-function modifXmlAccueil($id, $contenu) {
+function modifXml($id, $contenu) {
     $dom = new DOMDocument();
     //chargement de la bdd
     $dom->load('donnees/xml/bdd.xml');

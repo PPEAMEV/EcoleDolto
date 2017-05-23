@@ -1,0 +1,19 @@
+<section class="container" >
+    <div id="container_inscription">
+        <div id='corps_inscription'>
+            <h2>Comment s'inscrire</h2>
+            <div>
+                <?php if ($estConnecte) {
+                    ?><img id="text_inscription" class="edit_text" src="donnees/img/edit.png" /><?php
+                } ?>
+                <p><?php echo nl2br($lignes[0]); ?></p>
+            </div>
+        </div>
+        <div id="img_inscription">
+            <?php if ($estConnecte) {
+                    ?><img id="lien_inscription" class="edit_text" src="donnees/img/edit.png" /><?php
+                } ?>
+            <a target="_blank" href="<p><?php echo $lignes[1]; ?></p>"><img src='donnees/img/arrow_icon.png'/></a>
+        </div>
+    </div>
+</section>

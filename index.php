@@ -38,6 +38,9 @@ switch($controleur) {
         include("controleurs/c_petite_section.php");
         break;
     }
+    case 'inscription': {
+        include("controleurs/c_inscription.php");
+    }
     
 }
 
