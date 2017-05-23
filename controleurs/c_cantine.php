@@ -1,9 +1,8 @@
 <?php
 
-
-if($estConnecte){
+if ($estConnecte) {
     include_once 'ihm/contact_admin.php';
-}else{
+} else {
     include_once 'ihm/cantine.php';
 }
 
@@ -14,13 +13,7 @@ $action = $_GET['action'];
 switch ($action) {
     case 'cantine':
         include_once("ihm/header.php");
-        if ($estConnecte) {
-            include_once("ihm/cantine.php");
-            include_once 'ihm/footer_admin.php';
-        } else {
-            include_once("ihm/cantine.php");
-            include_once 'ihm/footer.php';
-        }
+        include_once("ihm/cantine.php");
+        include_once 'ihm/footer.php';
         break;
-   
 }

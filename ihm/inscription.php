@@ -13,7 +13,7 @@
             <?php if ($estConnecte) {
                     ?><img id="lien_inscription" class="edit_text" src="donnees/img/edit.png" /><?php
                 } ?>
-            <a target="_blank" href="<p><?php echo $lignes[1]; ?></p>"><img src='donnees/img/arrow_icon.png'/></a>
+            <a target="_blank" href="<?php echo $lignes[1]; ?>"><img src='donnees/img/arrow_icon.png'/></a>
         </div>
     </div>
 </section>
