@@ -36,7 +36,7 @@
         <div class="ligne ligne-orange">
             <div class="left texte">
                 <?php if ($estConnecte) {
-                    ?><img id="accueil_ligne3" class="edit_text" src="donnees/img/edit.png" /><?php
+                    ?><img id="accueil_ligne3" class="edit_text edit_block" src="donnees/img/edit.png" /><?php
                 }?>
                 <p>
                     <?php echo nl2br($lignes[2]);?>
@@ -44,7 +44,7 @@
             </div>
             <div class="right">
                 <?php if ($estConnecte) {
-                    ?><img id="accueil_image_ligne3" class="edit_doc" src="donnees/img/edit.png" /><?php
+                    ?><img id="accueil_image_ligne3" class="edit_doc edit_block" src="donnees/img/edit.png" /><?php
                 }?>
                 <img src="donnees/img/<?php echo $images[2]?>" alt="" />
             </div>

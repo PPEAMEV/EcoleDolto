@@ -7,7 +7,7 @@
             <div class="ligne ligne-rouge">
                 <div class="left texte">
                     <?php if ($estConnecte) {
-                        ?><img id="acces" class="edit_text" src="donnees/img/edit.png" /><?php
+                        ?><img id="acces" class="edit_text edit_block" src="donnees/img/edit.png" /><?php
                     }?>
                     <p>L'école se situe à côté du centre ville, en face de l'école primaire et se trouve dans une rue piétonne, assurant ainsi la sécurité des enfants.</p>   
                     <h1>Adresse:</h1><br>
