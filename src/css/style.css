@@ -352,12 +352,10 @@ input[type=text], input[type=password] {
 }
 
 .edit_text {
-    position: absolute;
-    float: none;
-    top: 3px;
-    right: 3px;
-    margin-top: auto;
-    margin-left: auto;
+       position: relative;
+    left: 372px;
+
+    
 }
 
 .edit_doc {
