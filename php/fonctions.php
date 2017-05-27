@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -176,99 +175,72 @@ function up_error($code, $nom) {
   type : le type mime du fichier sélectionné par le client
   error : l'erreur rapportée par php lors de l'upload de l'image */
 function upload_img() {
-        //$_FILES existe on récupère les infos qui nous intéressent
-        $fichier = $_FILES['doc']['name']; //nom réel de l'image
-        $size = $_FILES['doc']['size']; //poid de l'image en octets
-        $tmp = $_FILES['doc']['tmp_name']; //nom temporaire de l'image (sur le serveur)
-        $type = $_FILES['doc']['type']; //type de l'image
-        $error = $_FILES['doc']['error'];
-        $retour = up_error($error, $fichier);
-        //$nom_final=" ";
-        if ($retour[0] === true) {
-            //On récupère la taille de l'image
-            list($width, $height) = getimagesize($tmp);
-            if (is_uploaded_file($tmp)) { //permet de vérifier si le fichier a été uploadé via http
-                //vérification du type de l'img, son poids et sa taille
-                if ($type == "image/jpeg" | $type == "image/png" | $type == "image/gif" && $size <= "26214400" && $width <= "4000" && $height <= "4000") {
-                    // type tout type d'images, poids < à 26214400 octets soit environ 25Mo, largeur = hauteur = 4000px
-                    //Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
-                    $fichier = preg_replace("` `i", "", $fichier); //ligne facultative :)
-                    //On vérifie s'il existe une image qui a le même nom dans le répertoire
-                    if (file_exists('./donnees/img/' . $fichier)) {
-                        touch($fichier);
-                    }
-                    /* 					//Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
-                      $nom_final= preg_replace("`.*`is",date("U").".*",$fichier);
-                      }
-                      else {
-                      $nom_final=$fichier; //l'image n'existe pas on garde le même nom
-                      } */
-                    //on déplace l'image dans le répertoire final
-                    move_uploaded_file($tmp, './donnees/img/' . $fichier);
-                    //Message indiquant que tout s'est bien passé
-//                    echo "L'image a été uploadée avec succès<br/>";
-                } else {
-                    //Le type mime, ou la taille ou le poids est incorrect
-                    echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
+    //$_FILES existe on récupère les infos qui nous intéressent
+    $fichier = $_FILES['doc']['name']; //nom réel de l'image
+    $size = $_FILES['doc']['size']; //poid de l'image en octets
+    $tmp = $_FILES['doc']['tmp_name']; //nom temporaire de l'image (sur le serveur)
+    $type = $_FILES['doc']['type']; //type de l'image
+    $error = $_FILES['doc']['error'];
+    $retour = up_error($error, $fichier);
+    //$nom_final=" ";
+    if ($retour[0] === true) {
+        //On récupère la taille de l'image
+        list($width, $height) = getimagesize($tmp);
+        if (is_uploaded_file($tmp)) { //permet de vérifier si le fichier a été uploadé via http
+            //vérification du type de l'img, son poids et sa taille
+            if ($type == "image/jpeg" | $type == "image/png" | $type == "image/gif" && $size <= "26214400" && $width <= "4000" && $height <= "4000") {
+                // type tout type d'images, poids < à 26214400 octets soit environ 25Mo, largeur = hauteur = 4000px
+                //Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
+                $fichier = preg_replace("` `i", "", $fichier); //ligne facultative :)
+                //On vérifie s'il existe une image qui a le même nom dans le répertoire
+                if (file_exists('./donnees/img/' . $fichier)) {
+                    touch($fichier);
                 }
+                /* 					//Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
+                  $nom_final= preg_replace("`.*`is",date("U").".*",$fichier);
+                  }
+                  else {
+                  $nom_final=$fichier; //l'image n'existe pas on garde le même nom
+                  } */
+                //on déplace l'image dans le répertoire final
+                move_uploaded_file($tmp, './donnees/img/' . $fichier);
+                //Message indiquant que tout s'est bien passé
+//                    echo "L'image a été uploadée avec succès<br/>";
             } else {
-                echo $retour[1], '<br />';
+                //Le type mime, ou la taille ou le poids est incorrect
+                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
             }
+        } else {
+            echo $retour[1], '<br />';
         }
-    /* //Pour tester si l'image est bien à sa place
-      echo '<img src="./donnees/img/' . $fichier . '" border="0" />';
-      echo '<br/>';
-      echo '<a href="javascript:history.back();">Retour</a>'; */
+    }
 }
 
-/* TEST UPLOAD FILES en général
- * function upload_file() {
-  if (isset($_FILES['image'])) {
-  //$_FILES existe on récupère les infos qui nous intéressent
-  $fichier = $_FILES['image']['name'] || $_FILES['pdf']['name']; //nom réel du fichier (image ou pdf)
-  $size = $_FILES['image']['size'] || $_FILES['pdf']['size']; //poid du fichier en octets
-  $tmp = $_FILES['image']['tmp_name'] || $_FILES['pdf']['tmp_name']; //nom temporaire du fichier (sur le serveur)
-  $type = $_FILES['image']['type'] || $_FILES['pdf']['type']; //type de fichier
-  $error = $_FILES['image']['error'] || $_FILES['pdf']['error'];
-  $retour = up_error($error, $fichier);
-
-  //assigne où uploader le fichier en fonction de son type (pdf ou image)
-  $adress = './donnees/';
-  if (isset($_FILES['pdf']['type'])){
-  $adress = './donnees/pdf/';
-  }
-  else {
-  $adress = './donnees/img/';
-  }
-  //$nom_final=" ";
-  if ($retour[0] === true) {
-  //On récupère la taille de l'image
-  list($width, $height) = getimagesize($tmp);
-  if (is_uploaded_file($tmp)) { //permet de vérifier si le fichier a été uploadé via http
-  //vérification du type de l'img, son poids et sa taille
-  if ($type == "image/jpeg" | $type == "image/png" | $type == "image/gif" | $type == "application/pdf" && $size <= "26214400" && $width <= "4000" && $height <= "4000") {
-  // type tout type d'images + fichier pdf, poids < à 26214400 octets soit environ 25Mo, largeur = hauteur = 4000px
-  //Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
-  $fichier = preg_replace("` `i", "", $fichier); //ligne facultative :)
-  //On vérifie s'il existe une image qui a le même nom dans le répertoire
-  if (file_exists($adress . $fichier)) {
-  touch($fichier);
-  }
-
-  //on déplace l'image dans le répertoire final
-  move_uploaded_file($tmp, $adress . $fichier);
-  //Message indiquant que tout s'est bien passé
-  echo "Le fichier a été uploadé avec succès<br/>";
-  } else {
-  //Le type mime, ou la taille ou le poids est incorrect
-  echo 'Votre fichier a été rejeté (poids, taille ou type incorrect)';
-  }
-  } else {
-  echo $retour[1], '<br />';
-  }
-  }
-  }
- */
+function upload_pdf() {
+    $fichier = $_FILES['doc']['name'];
+    $size = $_FILES['doc']['size'];
+    $tmp = $_FILES['doc']['tmp_name'];
+    $type = $_FILES['doc']['type'];
+    $error = $_FILES['doc']['error'];
+    $extensions = array('.docx', '.txt', '.pdf');
+    $extension = strrchr($_FILES['doc']['name'], '.');
+    $retour = up_error($error, $fichier);
+    if ($retour[0] === true) {
+        if (is_uploaded_file($tmp)) {
+            if (in_array($extension, $extensions) && $size <= "96214400") {
+                $fichier = preg_replace("` `i", "", $fichier);
+                if (file_exists('./donnees/pdf/' . $fichier)) {
+                    touch($fichier);
+                }
+                move_uploaded_file($tmp, './donnees/pdf/' . $fichier);
+            } else {
+                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
+            }
+        } else {
+            echo $retour[1], '<br />';
+        }
+    }
+}
 
 function upload_file() {
     $dossier = './donnees/pdf/';
@@ -382,59 +354,63 @@ function supprXmlConseils($id) {
     }
 }
 
-//ahmad:pour modfier la xml la même que fuction ajoutXml mais j'ai la modifie pour adapter avec mes elements
-function updateXml($titre, $fichier) {
-    $dom = new DOMDocument();
-    $dom->load('donnees/xml/bdd.xml');
-    $newNode = $dom->createElement('edt');
-      $newNode->setAttribute("id_edt", $fichier);
-    $subNodesTitre = $dom->createElement('titre', $titre);
-    $subNodesfichier = $dom->createElement('fichier', $fichier);
-    $newNode->appendChild($subNodesTitre);
-    $newNode->appendChild($subNodesfichier);
-    $edts = $dom->getElementsByTagName('edts')[0];
-    $edts->appendChild($newNode);
-    $dom->save('donnees/xml/bdd.xml');
+//ahmad pour la page HEDT
+function edt_titre($fichier) {
+    $titres[0] = (string) $fichier->edts->ligne[0];
+    $titres[1] = (string) $fichier->edts->ligne[2];
+    return $titres;
 }
 
-//function pour recuprer les informations for afficher les pdfs
-function getPdfs($fichier) {
-    $i = 0;
-    $listePdfs = array();
-    foreach ($fichier->xpath('//edt') as $edt) {
-        $listePdfs[$i][0] = $edt->titre;
-        $listePdfs[$i][1] = $edt->fichier;
-
-        $i++;
-    }
-    return $listePdfs;
-}
-function modif_EDT($id_edt , $titre, $fichier) {
-    $dom = new DOMDocument();
-    $dom->load('donnees/xml/bdd.xml');
-    $newNode = $dom->createElement('edt');
-    $newNode->setAttribute("id_edt", $fichier);
-    $subNodesTitre = $dom->createElement('titre', $titre);
-    $subNodesFichier = $dom->createElement('fichier', $fichier);
-    $newNode->appendChild($subNodesTitre);
-    $newNode->appendChild($subNodesFichier);
-    $xp = new DOMXPath($dom);
-    $oldNode = $xp->query('//*[@id_edt="' . $id_edt . '"]')->item(0);
-    $oldNode->parentNode->replaceChild($newNode, $oldNode);
-    $dom->save('donnees/xml/bdd.xml');
+function edt_pdf($fichier) {
+    $pdfs[0] = (string) $fichier->edts->ligne[1];
+    $pdfs[1] = (string) $fichier->edts->ligne[3];
+    return $pdfs;
 }
 
-//function pour recuprer les liste des itemes 
-function getItems($fichier) {
-    $i = 0;
-    $listeItems = array();
-    foreach ($fichier->xpath('//item') as $item) {
-        $listeItems[$i][0] = $item->img_src;
-        $listeItems[$i][1] = $item->titre;
-        $listeItems[$i][2] = $item->text;
-        $i++;
-    }
-    return $listeItems;
+//ahmad pour la page cantine
+function cantine_titre($fichier) {
+    $titres[0] = (string) $fichier->cantine->ligne[2];
+    return $titres;
+}
+
+function cantine_image($fichier) {
+    $images[0] = (string) $fichier->cantine->ligne[0];
+    return $images;
+}
+
+function cantine_text($fichier) {
+    $texts[0] = (string) $fichier->cantine->ligne[1];
+    return $texts;
+}
+
+function cantine_pdf($fichier) {
+    $pdf[0] = (string) $fichier->cantine->ligne[2];
+    return $pdf;
+}
+
+//ahmad pour la page activite
+function slide_titre($fichier) {
+    $titres[0] = (string) $fichier->items_activite->ligne[1];
+    $titres[1] = (string) $fichier->items_activite->ligne[4];
+    $titres[2] = (string) $fichier->items_activite->ligne[7];
+    $titres[3] = (string) $fichier->items_activite->ligne[10];
+    return $titres;
+}
+
+function slide_image($fichier) {
+    $images[0] = (string) $fichier->items_activite->ligne[0];
+    $images[1] = (string) $fichier->items_activite->ligne[3];
+    $images[2] = (string) $fichier->items_activite->ligne[6];
+    $images[3] = (string) $fichier->items_activite->ligne[9];
+    return $images;
+}
+
+function slide_text($fichier) {
+    $texts[0] = (string) $fichier->items_activite->ligne[2];
+    $texts[1] = (string) $fichier->items_activite->ligne[5];
+    $texts[2] = (string) $fichier->items_activite->ligne[8];
+    $texts[3] = (string) $fichier->items_activite->ligne[11];
+    return $texts;
 }
 
 /*
@@ -443,10 +419,11 @@ function getItems($fichier) {
  * @param $id : id de l'endroit l'on se trouve pour l'identification para rapport au XML
  * @param $typeCss : prend la valeur edit_block si l'on veut que le bouton applique le style edit texte edit_block || edit_texte || edit_doc || edit_doc edit_block
  */
-function modeAdmin($estConnecte,$id,$typeCss){
+
+function modeAdmin($estConnecte, $id, $typeCss) {
     if ($estConnecte) {
         ?>
-        <img id="<?= $id ?>" class="<?= $typeCss ?>" src="donnees/img/edit.png" /><?php
-    }   
+        <img id="<?= $id ?>" class="<?= $typeCss ?>" src="donnees/img/edit.png" />
+        <?php
+    }
 }
-?>

@@ -17,16 +17,9 @@
     <footer>
         <ligne id="footer_tel">Tél. 02 97 66 90 70</ligne>
     </footer>
-    <edts>
-        <edt id_edt="Emploi du temps">
-            <titre>Emploi du temps</titre>
-            <fichier>donnees/pdf/EDT.pdf</fichier>   
-        </edt>
-        <edt id_edt="Horaires de l'école">
-            <titre>Horaires de l'école</titre>
-            <fichier>donnees/pdf/horaires de l'école.pdf</fichier>   
-        </edt>
-    </edts>
+    
+  
+        
     <conseils>
         <conseil id="compte_rendu_CE_du_15_nov_2016.pdf">
             <date>15 novembre 2016</date>
@@ -46,27 +39,31 @@
     </inscription>
     
     <items_activite>
-        <item>
-            <img_src>donnees/img/activité2.jpg </img_src>
-            <titre>En grande section, place au raisonnement </titre>
-            <text>Le cours préparatoire approche. Les enfants de 5 ans poursuivent leur découverte de l'écriture et de la lecture. </text>
-        </item>
-        <item>
-            <img_src>donnees/img/noel.jpg</img_src>
-            <titre>NOEL</titre>
-            <text>joyeux noël.</text>
-        </item>
-        <item>
-            <img_src>donnees/img/ecole-maternelle.jpg</img_src>
-            <titre>Ensemble</titre>
-            <text>Les conseils de famili pour passer une année sans soucis Pour faciliter la vie de votre enfant à l'école.</text>
-        </item>
-        <item>
-            <img_src>donnees/img/vac.JPG</img_src>
-            <titre>vacances</titre>
-            <text>Explorer le monde du vivant, des objets et de la matière À leur entrée à l’école maternelle.</text>
-        </item>
+        <ligne id="slide_image_1">donnees/img/activité2.jpg</ligne>
+        <ligne id="slide_titre_1">En grande section, place au raisonnement ...</ligne>
+        <ligne id="slide_text_1">Le cours préparatoire approche. Les enfants de 5 ans poursuivent leur découverte de l'écriture et de la lecture.</ligne>
+        <ligne id="slide_image_2">donnees/img/noel.jpg</ligne>
+        <ligne id="slide_titre_2">NOEL</ligne>
+        <ligne id="slide_text_2">joyeux noël..</ligne>
+         <ligne id="slide_image_3">donnees/img/claudine_ps_avant_recre.jpg</ligne>
+        <ligne id="slide_titre_3">Ensemble</ligne>
+        <ligne id="slide_text_3">Les conseils de famili pour passer une année sans soucis Pour faciliter la vie de votre enfant à l'école.</ligne>
+          <ligne id="slide_image_4">donnees/img/claudine_ps_danse_02.jpg</ligne>
+        <ligne id="slide_titre_4">vacances</ligne>
+        <ligne id="slide_text_4">Explorer le monde du vivant, des objets et de la matière À leur entrée à l’école maternelle.</ligne>
     </items_activite>
+    
+    <cantine>
+        <ligne id="cantine_image_1">donnees/img/nathalie_ms_gs_ateliers_02.jpg</ligne>
+        <ligne id="cantine_text_1">        La  cantine est dans les locaux de l'école, les enfants ont juste à traverser le préau. Les TPS-PS et les MS vont se coucher juste après le repas pour garder un rythme biologique propre à l'endormissement.Ils mangent au premier service de 12h à 12h45 
+             Les élèves de GS jouent dans la cour si le temps le permet, sinon ils jouent à des jeux calmes en intérieur. Ils déjeunent de 12h45 à 13h30.Ils ont 15 minutes de récréation avant de retourner en classe.
+             La mise en place de 2 services permet aux enfants de manger dans le calme.
+            Chaque ATSEM s'occupe  des enfants de sa classe afin de préserver une continuité et de servir de repère aux enfants dont elles ont la charge. Elles sont aidées par du personnel communal .
+            Les menus, accessibles par <a href="http://www.google.com">le lien</a> sont conformes aux directives nationales et visés par une diètéticienne . Les repas sont préparés chaque jour par la cuisine du collège de Theix-Noyalo et livrés dans la matinée. La municipalité privilégie les filières Bio et les producteurs locaux dès que c'est possible.</ligne>
+        
+        <ligne id="cantine_titre_1">CANTINE</ligne>
+   
+    </cantine>
     
     <petite_section>
         <ligne id="ps_maitresse">Notre maitresse de petite section</ligne>
@@ -83,7 +80,7 @@
         <ligne id="ms_maitresse">Notre maitresse de moyenne section</ligne>
         <ligne id="ms_image_maitresse">14-mme-chipie.jpg</ligne>
         <ligne id="ms_ligne1">bonjour les enfants</ligne>
-        <ligne id="ms_image_ligne1">nathalie_ms_gs_ateliers_06.jpg</ligne>
+        <ligne id="ms_image_ligne1">Ecole1.jpg</ligne>
         <ligne id="ms_ligne2">Salle de jeu</ligne>
         <ligne id="ms_image_ligne2">claudine_ps_danse.jpg</ligne>
         <ligne id="ms_presentation_section">La classe de Moyenne section</ligne>
@@ -100,4 +97,10 @@
         <ligne id="gs_presentation_section">La classe de Grande section</ligne>
         <ligne id="gs_phrase_section">La classe de Grande section</ligne>
     </grande_section>
+      <edts>
+        <ligne id="HEDT_titre_1">Emploi du temps</ligne>
+        <ligne id="HEDT_pdf_1">donnees/pdf/EDT.pdf</ligne>
+        <ligne id="HEDT_titre_2">Horaires de l'école</ligne>
+        <ligne id="HEDT_pdf_2">donnees/pdf/horaires de l'école.pdf</ligne>
+        </edts>
 </root>

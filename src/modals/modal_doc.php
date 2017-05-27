@@ -12,9 +12,9 @@
                 <form id="form_doc" class="form-horizontal well" method="post" action="<?php echo $url;?>" enctype="multipart/form-data">
                     <fieldset>
                         <div class="form-group">
-                            <label for="content" class="col-lg-2 control-label">Fichier</label>
+                            <label for="content"   class="col-lg-2 control-label">Fichier</label>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" name="doc" accept="image/*,application/pdf">
+                                <input type="file" class="form-control" name="doc"  name="pdf" accept="image/*,application/pdf">
                             </div>
                         </div>
 

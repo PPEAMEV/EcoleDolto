@@ -1,18 +1,18 @@
 
+<div class="container container_edt">
 
+    
 
-<div class="container">
+        <h3> <?php echo $titres[0] ?>  
+            <img   class="edit_doc" src="donnees/img/small_edit.png" />
+            <iframe id="src"  src="<?php echo $pdfs[0] ?>" alt=”pdf” ></iframe>
+            
+            <br>
+            <hr>
+            <br>
 
-    <?php foreach ($LES_EDT as $edt) { ?>
-        <h3><?php echo $edt[0] ?></h3>
-
-        <iframe id="edt"  src="<?php echo $edt[1] ?>" alt=”pdf” ></iframe>
-
-        <br>
-        <hr>
-        <br>
-
-    <?php } ?>
-</div>
-
-
+        <h3> <?php echo $titres[1] ?>  
+            <img   class="edit_doc" src="donnees/img/small_edit.png" />
+            <iframe id="src"  src="<?php echo $pdfs[1] ?>" alt=”pdf” ></iframe>
+      
+        </div>
