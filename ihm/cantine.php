@@ -16,7 +16,7 @@
         </div>
 
         <div class="right">
-            <?php modeAdmin($estConnecte, "cantine_image_1", "edit_doc") ?>
+            <?php modeAdmin($estConnecte, "cantine_image_1", "edit_doc edit_block") ?>
             <img id="image_cantine" src=" <?php echo $images[0]; ?>" alt="cantine" />
             
         </div>
