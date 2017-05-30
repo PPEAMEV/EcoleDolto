@@ -22,9 +22,50 @@ switch ($action) {
                 $mdp = $_POST['mdp'];
                 $_SESSION['mdp'] = $mdp;
                 $_SESSION['login'] = $login;
-            } else {
+                if (connexion($fichier, $mdp)) {
+                    $lignes = accueil($fichier);
+                    $images = images_accueil($fichier);
+                    $ligne = footer($fichier);
+                    $url = "index.php?uc=accueil&action=majXml";
+                    $estConnecte = estConnecte();
+                    include_once("ihm/header.php");
+                    include_once ('src/modals/modal_text.php');
+                    include_once ('src/modals/modal_doc.php');
+                    include_once 'ihm/accueil.php';
+                    include_once 'ihm/footer.php';
+                } else {
+                    $ligne = footer($fichier);
+                    $err_connexion = true;
+                    include_once("ihm/header.php");
+                    include_once("ihm/connexion.php");
+                    include_once 'ihm/footer.php';
+                }
+            } else if (isset($_SESSION['login']) && $_SESSION($_POST['mdp'])) {
                 $login = $_SESSION['login'];
                 $mdp = $_SESSION['mdp'];
+                if (connexion($fichier, $mdp)) {
+                    $lignes = accueil($fichier);
+                    $images = images_accueil($fichier);
+                    $ligne = footer($fichier);
+                    $url = "index.php?uc=accueil&action=majXml";
+                    $estConnecte = estConnecte();
+                    include_once("ihm/header.php");
+                    include_once ('src/modals/modal_text.php');
+                    include_once ('src/modals/modal_doc.php');
+                    include_once 'ihm/accueil.php';
+                    include_once 'ihm/footer.php';
+                } else {
+                    $ligne = footer($fichier);
+                    $err_connexion = true;
+                    include_once("ihm/header.php");
+                    include_once("ihm/connexion.php");
+                    include_once 'ihm/footer.php';
+                }
+            } else {
+                $ligne = footer($fichier);
+                include_once("ihm/header.php");
+                include_once("ihm/connexion.php");
+                include_once 'ihm/footer.php';
             }
             if (connexion($fichier, $mdp)) {
                 $lignes = accueil($fichier);
