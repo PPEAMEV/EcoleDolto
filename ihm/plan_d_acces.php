@@ -1,8 +1,4 @@
 
-<html>
-    <body>
-
-
         <div class="container">
             <div class="ligne ligne-rouge">
                 <div class="left texte">
@@ -21,9 +17,3 @@
                 </div>
             </div>
         </div>
-
-
-
-    </body>
-</html>
-

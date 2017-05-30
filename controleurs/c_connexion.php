@@ -17,8 +17,15 @@ switch ($action) {
             break;
         }
     case 'valideConnexion': {
-            $login = $_POST['login'];
-            $mdp = $_POST['mdp'];
+            if (isset($_POST['login']) && isset($_POST['mdp'])) {
+                $login = $_POST['login'];
+                $mdp = $_POST['mdp'];
+                $_SESSION['mdp'] = $mdp;
+                $_SESSION['login'] = $login;
+            } else {
+                $login = $_SESSION['login'];
+                $mdp = $_SESSION['mdp'];
+            }
             if (connexion($fichier, $mdp)) {
                 $lignes = accueil($fichier);
                 $images = images_accueil($fichier);
@@ -42,7 +49,7 @@ switch ($action) {
     case 'déconnexion': {
             $_SESSION = array();
             session_destroy();
-             include_once("ihm/header.php");
+            include_once("ihm/header.php");
             $lignes = accueil($fichier);
             $images = images_accueil($fichier);
             $ligne = footer($fichier);
