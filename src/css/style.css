@@ -182,8 +182,9 @@ header h3 {
     position: relative;
 }
 img {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
+    cursor: pointer;
 }
 .ligne:after {
     content:"";
@@ -301,6 +302,7 @@ input[type=text], input[type=password] {
     position: absolute;
     top: 257px;
     right: 101px;
+    cursor: pointer;
 }
 
 
@@ -332,6 +334,7 @@ input[type=text], input[type=password] {
     border: 1px solid #888;
     width: 60%;
     max-height: 450px;
+    cursor: pointer;
 }
 
 /* The Close Button */
@@ -340,6 +343,7 @@ input[type=text], input[type=password] {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -352,7 +356,9 @@ input[type=text], input[type=password] {
 .edit_inline {
     position: relative;
     left: 372px;
-
+    cursor: pointer;
+    max-height: 24px;
+    max-width: 24px;
 
 }
 
@@ -363,6 +369,7 @@ input[type=text], input[type=password] {
     right: 3px;
     margin-top: auto;
     margin-left: auto;
+    cursor: pointer;
 
 }
 
@@ -489,4 +496,18 @@ iframe {
 
 #img_inscription img {
     cursor: pointer;
+}
+
+.edit_doc{
+    cursor: pointer;
+    max-height: 24px;
+    max-width: 24px !important;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    z-index: 2;
+}
+#image_cantine{
+    height: 557px;
+    z-index: 1;
 }

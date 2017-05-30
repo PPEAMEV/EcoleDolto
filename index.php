@@ -42,6 +42,17 @@ switch($controleur) {
         include("controleurs/c_petite_section.php");
         break;
     }
+    
+    case 'moyenne_section': {
+        include("controleurs/c_moyenne_section.php");
+        break;
+    }
+    
+    case 'grande_section': {
+        include("controleurs/c_grande_section.php");
+        break;
+    }
+    
     case 'inscription': {
         include("controleurs/c_inscription.php");
     }

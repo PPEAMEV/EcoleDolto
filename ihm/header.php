@@ -43,8 +43,8 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?uc=petite_section">Petite section</a></li>
-                                <li><a href="#">Moyenne section</a></li>
-                                <li><a href="#">Grande section</a></li>
+                                <li><a href="index.php?uc=moyenne_section">Moyenne section</a></li>
+                                <li><a href="index.php?uc=grande_section">Grande section</a></li>
                                 <li><a href="index.php?uc=cantine">Cantine</a></li>
                                 <li><a href="index.php?uc=activites">Activités</a></li>
                             </ul>
