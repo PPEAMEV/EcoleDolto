@@ -11,7 +11,10 @@
             Après les repas, des intervenants proposent des activités variées dans le cadre du Contrat éducatif local. Les abords de l'école sont fermés à la circulation pour sécuriser les entrées et les sorties. &#13;
             L'école dispose d'une cour-jardin, d'une salle polyvalente spacieuse, d'un dortoir et de trois classes adaptées aux besoins et à l'évolution de vos enfants.</ligne>
         <ligne id="accueil_image_ligne2">claudine_ps_avant_recre_02.jpg</ligne>
-        <ligne id="accueil_ligne3">L'association des parents d'élèves soutient activement les projets de l'équipe pédagogique.</ligne>
+        <ligne id="accueil_ligne3">L'association des parents d'élèves soutient activement les projets de l'équipe pédagogique.&#13;
+&#13;
+« Je m'épanouis dans les valeurs humanistes de tolérance et de respect » grâce à des parcours culturels et sportifs.&#13;
+Projet d'école 2016-2019</ligne>
         <ligne id="accueil_image_ligne3">claudine_ps_ateliers.jpg</ligne>
     </accueil>
     <footer>
@@ -66,20 +69,23 @@
     </cantine>
     
     <petite_section>
-        <ligne id="ps_maitresse">Notre maitresse de petite section</ligne>
+        <ligne id="ps_maitresse">Notre maitresse de petite section Claudine ACAR</ligne>
         <ligne id="ps_image_maitresse">mmeProf.jpg</ligne>
-        <ligne id="ps_ligne1">what a good beeeer</ligne>
+        <ligne id="ps_ligne1">L'année de Petite-Section n'est pas quantitativement productive  . Cependant  elle permet à chaque enfant d'affiner la connaissance de soi , de partager dans le plaisir des moments et des expériences avec un groupe. C'est un merveilleux terrain pour construire le langage indispensable à la pensée , pour stimuler l'envie d'apprendre et de créer . Elle aide chaque enfant à s'affirmer comme un être autonome en toute sécurité.</ligne>
         <ligne id="ps_image_ligne1">claudine_ps_ateliers_04.jpg</ligne>
-        <ligne id="ps_ligne2">Salle de sieste</ligne>
+        <ligne id="ps_ligne2">Conformément aux programmes de 2015 ,votre enfant aura aussi un Cahier de Réussite dans lequel il collera tout au long de l'année des vignettes colorées quand il aura mis en place une compétence ou un savoir-faire.&#13;
+    &#13;
+    L'école maternelle est un lieu où existe le droit à la différence , la joie de grandir et de réussir à son rythme !&#13;
+</ligne>
         <ligne id="ps_image_ligne2">dortoir_ps.jpg</ligne>
         <ligne id="ps_presentation_section">La classe de Petite section</ligne>
         <ligne id="ps_phrase_section">La classe de Petite section</ligne>
     </petite_section>
     
     <moyenne_section>
-        <ligne id="ms_maitresse">Notre maitresse de moyenne section</ligne>
+        <ligne id="ms_maitresse">Notre maitresse de moyenne section : LAURENCE</ligne>
         <ligne id="ms_image_maitresse">14-mme-chipie.jpg</ligne>
-        <ligne id="ms_ligne1">bonjour les enfants</ligne>
+        <ligne id="ms_ligne1">Il n'y aura jamais de visage mécontent car il faut garder à l'esprit qu'il n'y a pas d'échec en maternelle : ce qui n'est pas maîtrisé aujourd'hui le sera demain à travers d'autres expériences.</ligne>
         <ligne id="ms_image_ligne1">Ecole1.jpg</ligne>
         <ligne id="ms_ligne2">Salle de jeu</ligne>
         <ligne id="ms_image_ligne2">claudine_ps_danse.jpg</ligne>
