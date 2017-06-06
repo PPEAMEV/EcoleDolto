@@ -42,7 +42,7 @@
                         <li class="dropdown bleu">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Classe passerelle</a></li>
+<!--                                <li><a href="#">Classe passerelle</a></li>-->
                                 <li><a href="index.php?uc=petite_section">Petite section</a></li>
                                 <li><a href="index.php?uc=moyenne_section">Moyenne section</a></li>
                                 <li><a href="index.php?uc=grande_section">Grande section</a></li>
