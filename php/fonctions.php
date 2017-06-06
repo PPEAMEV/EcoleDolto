@@ -165,15 +165,18 @@ function up_error($code, $nom) {
     return $return;
 }
 
-// Fonction d'upload des images
-/* Le fichier final sera copié dans le répertoire './donnees/img/' 
-  Dans index.php?uc=accueil&action=majXml nous récupérons les informations de notre fichier dans un tableau super global $_FILES ! celui ci contient :
+/*
+ *  Fonction d'upload des images
+ * Le fichier final sera copié dans le répertoire './donnees/img/' 
+ * Dans index.php?uc=accueil&action=majXml nous récupérons les informations de notre fichier dans un tableau super global $_FILES ! celui ci contient :
+ *
+ * @param name : le nom de l'image sur l'ordinateur du client
+ * @param tmp_name : le nom temporaire de l'image sur le serveur (depuis la racine du disque)
+ * @param size : la taille en octets du fichier
+ * @param type : le type mime du fichier sélectionné par le client
+ * @param error : l'erreur rapportée par php lors de l'upload de l'image 
+*/
 
-  name : le nom de l'image sur l'ordinateur du client
-  tmp_name : le nom temporaire de l'image sur le serveur (depuis la racine du disque)
-  size : la taille en octets du fichier
-  type : le type mime du fichier sélectionné par le client
-  error : l'erreur rapportée par php lors de l'upload de l'image */
 function upload_img() {
     //$_FILES existe on récupère les infos qui nous intéressent
     $fichier = $_FILES['doc']['name']; //nom réel de l'image
@@ -196,12 +199,14 @@ function upload_img() {
                 if (file_exists('./donnees/img/' . $fichier)) {
                     touch($fichier);
                 }
-                /* 					//Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
+                /* Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première 
+                 * (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
                   $nom_final= preg_replace("`.*`is",date("U").".*",$fichier);
                   }
                   else {
                   $nom_final=$fichier; //l'image n'existe pas on garde le même nom
-                  } */
+                  } 
+                */
                 //on déplace l'image dans le répertoire final
                 move_uploaded_file($tmp, './donnees/img/' . $fichier);
                 //Message indiquant que tout s'est bien passé
@@ -271,7 +276,7 @@ function upload_file() {
 }
 
 //Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
-// NE FAUT-IL PAS MIEUX SEPARER LE FORMULAIRE DE TEXTE ET D'IMAGE???
+
 //création d'un objet DOM
 /**
  * modifie l'xml et le sauvegarde
