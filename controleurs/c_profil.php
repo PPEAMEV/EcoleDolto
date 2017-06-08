@@ -10,8 +10,7 @@ switch ($action) {
         include_once 'ihm/header.php';
         $ligne = footer($fichier);
         $url = "index.php?uc=profil&action=majXml";
-        include_once ('ihm/modifcation_mdp.php');
-        include_once("ihm/profil.php");
+        include_once ('ihm/modification_mdp.php');
         include_once 'ihm/footer.php';
 
         break;
@@ -23,7 +22,7 @@ switch ($action) {
             $contenu = CrypterMDP($mdp, $mdpactuel);
             if ($contenu == "") {
                 $errlog = 1;
-                include_once ('ihm/modifcation_mdp.php');
+                include_once ('ihm/modification_mdp.php');
             } else {
 
                 modifXml($id, $contenu);

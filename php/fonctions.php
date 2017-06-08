@@ -109,8 +109,8 @@ function footer($fichier) {
  * @return boolean
  */
 function connexion($fichier, $mdp) {
-    $user = (string) $fichier->admin->user;
-    $hash = (string) $fichier->admin->mdp;
+    $user = (string) $fichier->admin->ligne[0];
+    $hash = (string) $fichier->admin->ligne[1];
     if ($user == "admin" && password_verify($mdp, $hash)) {
         $_SESSION['user'] = $user;
         $reussite = true;
