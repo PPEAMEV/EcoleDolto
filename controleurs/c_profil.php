@@ -36,5 +36,6 @@ switch ($action) {
                 include_once("ihm/footer.php");
             }
         }
+        break;
 }
 

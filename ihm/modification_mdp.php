@@ -1,4 +1,4 @@
-<form method="post" action="" onsubmit="return verification()">
+<form method="post" action="index.php?uc=profil&action=majXml" onsubmit="return verification()">
     Nouveau mot de passe : <input type="password" name="nmdp" id="nouveau1">
     Verification mot de passe : <input type="password" name="vmdp" id="nouveau2">
     <input type="submit" name="submit" value=" Envoyer ">
