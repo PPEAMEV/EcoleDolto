@@ -1,0 +1,6 @@
+@font-face {
+font-family: 'Amatic SC', cursive;
+font-style: normal;
+font-weight: 300;
+src: local('AmaticSC'), local('../fonts/AmaticSC-Regular.ttf'), url(../fonts/AmaticSC-Regular.ttf) format('ttf');
+}

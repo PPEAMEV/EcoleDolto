@@ -2,22 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="src/css/jquery-ui.min.css">
+        <title>François Dolto</title>
+            <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="src/css/jquery-ui.min.css" >
+        <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="src/css/bootstrap-theme.min.css.map">
+        <link rel="stylesheet" href="src/css/bootstrap-theme.min.css">
+        
+         <!--FONT-->
+         <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
+         <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet"> 
+        <link href="src/css/font_AmaticSC-blod.css" rel="stylesheet" type="text/css"> 
+        <link href="src/css/font_AmaticSC-Regular.css" rel="stylesheet" type="text/css"> 
+        <link href="src/css/glyphicons-halflings-regular.css" rel="stylesheet" type="text/css"> 
+        
+          <!--Fichier css principale-->
         <link rel="stylesheet" type="text/css" href="src/css/style.css">
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="src/js/jquery-ui.min.js"></script>
+        
+        
+        <!--JSS-->
+          <script src="src/js/jquery-3.1.1.min.js"></script>  
+         <script src="src/js/bootstrap.min.js" ></script>
         <script src="src/js/fonctions.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet"> 
+      
     </head>
     <body>
         <header class="container">
@@ -42,7 +49,7 @@
                         <li class="dropdown bleu">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Présentation<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-<!--                                <li><a href="#">Classe passerelle</a></li>-->
+                                <!--                                <li><a href="#">Classe passerelle</a></li>-->
                                 <li><a href="index.php?uc=petite_section">Petite section</a></li>
                                 <li><a href="index.php?uc=moyenne_section">Moyenne section</a></li>
                                 <li><a href="index.php?uc=grande_section">Grande section</a></li>
