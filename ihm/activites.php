@@ -44,7 +44,7 @@
                         <h1><?php echo $titres[2]; ?>
                             <?php modeAdmin($estConnecte, "slide_titre_3", "edit_text") ?></h1>
                         <p class="lead"><?php echo $texts[2]; ?>
-                            <?php modeAdmin($estConnecte, "slide_text_2", "edit_text") ?></p>
+                            <?php modeAdmin($estConnecte, "slide_text_3", "edit_text") ?></p>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                         <h1><?php echo $titres[3]; ?>
                             <?php modeAdmin($estConnecte, "slide_titre_4", "edit_text") ?></h1>
                         <p class="lead"><?php echo $texts[3]; ?>
-                            <?php modeAdmin($estConnecte, "slide_text_3", "edit_text") ?></p>
+                            <?php modeAdmin($estConnecte, "slide_text_4", "edit_text") ?></p>
                     </div>
 
                 </div>

@@ -55,13 +55,16 @@
                         <li><a class="orange fin-nav" href="index.php?uc=plan_d_acces">Plan d'accès</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> <?php
-                                if (estConnecte()) {
-                                    echo "Déconnexion";
-                                } else {
-                                    echo "Admin";
-                                };
-                                ?> </a></li>
+                        <?php if (!estConnecte()) {
+                            ?><li class="rouge fin-nav"><a href="index.php?uc=connexion&action=demandeConnexion"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+                        <?php } else { ?>
+                            <li class="dropdown rouge fin-nav">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.php?uc=profil">Profil</a></li>
+                                    <li><a href="index.php?uc=connexion&action=demandeConnexion">Déconnexion</a></li>
+                                </ul>
+                            </li><?php } ?>
                     </ul>
                 </div>
             </div>

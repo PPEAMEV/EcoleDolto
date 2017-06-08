@@ -270,9 +270,7 @@ function upload_file() {
     }
 }
 
-//Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
-// NE FAUT-IL PAS MIEUX SEPARER LE FORMULAIRE DE TEXTE ET D'IMAGE???
-//création d'un objet DOM
+
 /**
  * modifie l'xml et le sauvegarde
  * @param type $id
@@ -295,6 +293,15 @@ function modifXml($id, $contenu) {
     $dom->save('donnees/xml/bdd.xml');
 }
 
+/*************************************************
+ *----------GESTION CONSEILS----------------------
+ *------------------------------------------------/
+
+/**
+ * ajout d'un nouveau conseil
+ * @param type $date
+ * @param type $fichier
+ */
 function ajoutXml($date, $fichier) {
     $dom = new DOMDocument();
     $dom->load('donnees/xml/bdd.xml');
@@ -309,6 +316,11 @@ function ajoutXml($date, $fichier) {
     $dom->save('donnees/xml/bdd.xml');
 }
 
+/**
+ * récupération des conseils pour l'affichage
+ * @param type $fichier
+ * @return type
+ */
 function getConseils($fichier) {
     $i = 0;
     $listeConseils = array();
@@ -320,6 +332,12 @@ function getConseils($fichier) {
     return $listeConseils;
 }
 
+/**
+ * modification d'un conseil déjà présent
+ * @param type $id
+ * @param type $date
+ * @param type $fichier
+ */
 function modifXmlConseils($id, $date, $fichier) {
     $dom = new DOMDocument();
     //chargement de la bdd
@@ -341,6 +359,10 @@ function modifXmlConseils($id, $date, $fichier) {
     $dom->save('donnees/xml/bdd.xml');
 }
 
+/**
+ * suppression d'un conseil
+ * @param type $id
+ */
 function supprXmlConseils($id) {
     $id = str_replace("'", "", $id);
     $dom = new DOMDocument();
@@ -353,6 +375,8 @@ function supprXmlConseils($id) {
         $dom->save('donnees/xml/bdd.xml');
     }
 }
+
+/*-------------------FIN CONSEILS*/
 
 //ahmad pour la page HEDT
 function edt_titre($fichier) {
