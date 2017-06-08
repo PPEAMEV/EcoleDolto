@@ -270,3 +270,20 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+//Fonction js de vérification de modification du passe :
+function verification() {
+    $rep = false;
+    if (document.getElementById('nouveau1').value === "") {
+        $rep = false;
+    }
+    else if (document.getElementById("nouveau1").value !== document.getElementById("nouveau2").value)
+    {
+        alert('Veuillez retapez le même mot de passe');
+        $rep = false;
+    }
+    else {
+        $rep = true;
+    }
+    return $rep;
+}
