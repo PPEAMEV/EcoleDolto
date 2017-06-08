@@ -89,7 +89,6 @@ jQuery(document).ready(function ($) {
         window.location.href = theHREF;
     });
 
-
 //    if ($(".container_accueil")[0]) {
 //// GESTION DE LA FENETRE MODAL
 //// Get the modal
@@ -271,5 +270,3 @@ jQuery(document).ready(function ($) {
 
 
 });
-
-

@@ -175,7 +175,7 @@ function up_error($code, $nom) {
  * @param size : la taille en octets du fichier
  * @param type : le type mime du fichier sélectionné par le client
  * @param error : l'erreur rapportée par php lors de l'upload de l'image 
-*/
+ */
 
 function upload_img() {
     //$_FILES existe on récupère les infos qui nous intéressent
@@ -205,8 +205,8 @@ function upload_img() {
                   }
                   else {
                   $nom_final=$fichier; //l'image n'existe pas on garde le même nom
-                  } 
-                */
+                  }
+                 */
                 //on déplace l'image dans le répertoire final
                 move_uploaded_file($tmp, './donnees/img/' . $fichier);
                 //Message indiquant que tout s'est bien passé
@@ -276,7 +276,6 @@ function upload_file() {
 }
 
 //Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
-
 //création d'un objet DOM
 /**
  * modifie l'xml et le sauvegarde
@@ -396,6 +395,30 @@ function edt_pdf($fichier) {
     $pdfs[0] = (string) $fichier->edts->ligne[1];
     $pdfs[1] = (string) $fichier->edts->ligne[3];
     return $pdfs;
+}
+
+//ahmad pour la mot de passe
+function user_name($fichier) {
+    $user[0] = (string) $fichier->admin->ligne[0];
+    return $users;
+}
+
+function user_passe($fichier) {
+    $passe[0] = (string) $fichier->admin->ligne[1];
+    return $passes;
+}
+
+//ahmad pour crypter la mot de passe
+function CrypterMDP($mdp, $mdp_Actuel) {
+
+    //La fonction password_hash() est predéfini pour crypter la mot de passe, 
+    //il prend deux paramètre s le première la mote de passe et la douxième  PASSWORD_DEFAULT c'est une constante de l'algorithme predéfini.
+    $nouvelle_passe = password_hash("$mdp", PASSWORD_DEFAULT);
+    $rep = "";
+    if ($nouvelle_passe != $mdp_Actuel) {
+        $rep = $nouvelle_passe;
+    }
+    return $rep;
 }
 
 //ahmad pour la page cantine
