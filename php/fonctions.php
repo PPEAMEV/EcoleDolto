@@ -399,13 +399,11 @@ function edt_pdf($fichier) {
 
 //ahmad pour la mot de passe
 function user_name($fichier) {
-    $user[0] = (string) $fichier->admin->ligne[0];
-    return $users;
+    return (string) $fichier->admin->ligne[0];
 }
 
 function user_passe($fichier) {
-    $passe[0] = (string) $fichier->admin->ligne[1];
-    return $passes;
+    return (string) $fichier->admin->ligne[1];
 }
 
 //ahmad pour crypter la mot de passe
