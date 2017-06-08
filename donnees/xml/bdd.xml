@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
     <admin>
-        <user>admin</user>
-        <mdp>$2y$10$SZxu6b4EvvKHZZbO9T8KNOm8KWzewlWLbx/sS1vBImBiezNtApyEy</mdp>
+        <ligne id="user">admin</ligne>
+        <ligne id="mdp">$2y$10$SZxu6b4EvvKHZZbO9T8KNOm8KWzewlWLbx/sS1vBImBiezNtApyEy</ligne>
     </admin>
     <accueil>
         <ligne id="accueil_ligne1">Travail en groupes avec les enfants sur des projets éducatifs comme le projet d'école par exemple.dfqdsfqf</ligne>

@@ -56,7 +56,9 @@ switch($controleur) {
     case 'inscription': {
         include("controleurs/c_inscription.php");
     }
-    
+    case 'profil': {
+        include("controleurs/c_profil.php");
+    }
 }
 
 ?>
