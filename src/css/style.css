@@ -167,7 +167,7 @@ header h3 {
 
 .texte {
     text-align: justify;
-    padding: 10% 2% 2% 2%;
+    padding: 4% 2% 0% 2%;
     color: white;
 }
 
@@ -191,13 +191,18 @@ img {
     display: table;
     clear: both;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
     .left, .right {
         float: none;
         width: auto;
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .container {
+        width: auto;
+    }
+}
 
 /*-------------------FOOTER-------------------*/
 
