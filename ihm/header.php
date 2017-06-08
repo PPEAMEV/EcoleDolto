@@ -69,7 +69,7 @@
                             <li class="dropdown rouge fin-nav">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="index.php?uc=profil">Profil</a></li>
+                                    <li><a href="index.php?uc=profil&action=profil">Profil</a></li>
                                     <li><a href="index.php?uc=connexion&action=demandeConnexion">Déconnexion</a></li>
                                 </ul>
                             </li><?php } ?>

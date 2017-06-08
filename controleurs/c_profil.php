@@ -1,10 +1,7 @@
 
 <?php
 
-if (!isset($_GET['profil'])) {
-    $_GET['action'] = 'profil';
-}
-$action = $_GET['action'];
+$action = $_REQUEST['action'];
 switch ($action) {
     case 'profil':
         include_once 'ihm/header.php';
@@ -32,6 +29,8 @@ switch ($action) {
                 $url = "index.php?uc=accueil&action=majXml";
                 include_once ('src/modals/modal_text.php');
                 include_once ('src/modals/modal_doc.php');
+                $lignes = accueil($fichier);
+                $images = images_accueil($fichier);
                 include_once("ihm/accueil.php");
                 include_once("ihm/footer.php");
             }
