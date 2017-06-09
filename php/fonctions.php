@@ -429,6 +429,11 @@ function cantine_image($fichier) {
     $images[0] = (string) $fichier->cantine->ligne[0];
     return $images;
 }
+function cantine_line($fichier) {
+    $line= (string) $fichier->cantine->ligne[3];
+     return $line;
+}
+
 
 function cantine_text($fichier) {
     $texts[0] = (string) $fichier->cantine->ligne[1];
