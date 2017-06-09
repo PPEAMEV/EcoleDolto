@@ -13,22 +13,22 @@ switch ($action) {
         $url = "index.php?uc=HEDT&action=majXml";
         if ($estConnecte) {
             include_once ('src/modals/modal_doc.php');
-        } else {
-            include_once("ihm/horairs_EDT.php");
-            include_once 'ihm/footer.php';
-            break;
         }
+        include_once("ihm/horairs_EDT.php");
+        include_once 'ihm/footer.php';
+        break;
 
     case 'majXml': {
-            if ((isset($_POST['content']) || isset($_FILES['doc']['tmp_name']) ) && isset($_POST['id_ligne'])) {
+            if ((isset($_POST['content']) || isset($_FILES['pdf']['tmp_name']) ) && isset($_POST['id_ligne'])) {
                 if (isset($_POST['content'])) {
                     $contenu = $_POST['content'];
                 }
                 $id = $_POST['id_ligne'];
-                if (isset($_FILES['doc']['tmp_name'])) {
-                    if (is_uploaded_file($_FILES['doc']['tmp_name'])) {
-                        $fichier = $_FILES['doc']['name'];
-                        upload_pdf();
+                if (isset($_FILES['pdf']['tmp_name'])) {
+                    if (is_uploaded_file($_FILES['pdf']['tmp_name'])) {
+                        $fichierIni = $_FILES['pdf']['name'];
+                        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
+                        upload_file();
                         $contenu = preg_replace("` `i", "", $fichier);
                         $contenu = "donnees/pdf/" . $contenu;
                     }
@@ -42,7 +42,7 @@ switch ($action) {
             $ligne = footer($fichier);
             $url = "index.php?uc=HEDT&action=majXml";
             include_once ('src/modals/modal_doc.php');
-            include_once("ihm/horairs_EDT_admin.php");
+            include_once("ihm/horairs_EDT.php");
             include_once("ihm/footer.php");
             break;
         }

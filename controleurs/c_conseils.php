@@ -25,8 +25,8 @@ switch ($action) {
         include_once 'ihm/header.php';
         $ligne = footer($fichier);
         $conseils = getConseils($fichier);
-        include_once("ihm/conseils_admin.php");
-        include_once 'ihm/footer_admin.php';
+        include_once("ihm/conseils.php");
+        include_once 'ihm/footer.php';
         break;
     case 'supprimer':
         $id = $_GET['id'];

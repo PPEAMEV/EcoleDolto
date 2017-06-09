@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label for="content"   class="col-lg-2 control-label">Fichier</label>
                             <div class="col-lg-10">
-                                <input type="file" class="form-control" name="doc"  name="pdf" accept="image/*,application/pdf">
+                                <input type="file" class="form-control"  name="pdf" accept="image/*,application/pdf">
                             </div>
                         </div>
 

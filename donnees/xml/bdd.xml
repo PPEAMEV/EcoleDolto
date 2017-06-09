@@ -2,7 +2,7 @@
 <root>
     <admin>
         <ligne id="user">admin</ligne>
-        <ligne id="mdp">$2y$10$ZqZDrl/fCy8pIT3XTL72dOvytVZ/mxT/Rer0AKFByPpS10j4nnaji</ligne>
+        <ligne id="mdp">$2y$10$W4Yesf603ERXS0ghxHU4KebgR9iSAOuGYvUtcA1J.c51osYsarlWG</ligne>
     </admin>
     <accueil>
         <ligne id="accueil_ligne1">Travail en groupes avec les enfants sur des projets éducatifs comme le projet d'école par exemple.dfqdsfqf</ligne>
@@ -105,7 +105,7 @@ Projet d'école 2016-2019</ligne>
     </grande_section>
       <edts>
         <ligne id="HEDT_titre_1">Emploi du temps</ligne>
-        <ligne id="HEDT_pdf_1">donnees/pdf/EDT.pdf</ligne>
+        <ligne id="HEDT_pdf_1">donnees/pdf/attestation.pdf</ligne>
         <ligne id="HEDT_titre_2">Horaires de l'école</ligne>
         <ligne id="HEDT_pdf_2">donnees/pdf/horaires de l'école.pdf</ligne>
         </edts>

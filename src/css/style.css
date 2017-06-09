@@ -516,3 +516,7 @@ iframe {
     height: 557px;
     z-index: 1;
 }
+
+.container_edt {
+    text-align: center;
+}

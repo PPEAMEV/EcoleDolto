@@ -221,31 +221,31 @@ function upload_img() {
     }
 }
 
-function upload_pdf() {
-    $fichier = $_FILES['doc']['name'];
-    $size = $_FILES['doc']['size'];
-    $tmp = $_FILES['doc']['tmp_name'];
-    $type = $_FILES['doc']['type'];
-    $error = $_FILES['doc']['error'];
-    $extensions = array('.docx', '.txt', '.pdf');
-    $extension = strrchr($_FILES['doc']['name'], '.');
-    $retour = up_error($error, $fichier);
-    if ($retour[0] === true) {
-        if (is_uploaded_file($tmp)) {
-            if (in_array($extension, $extensions) && $size <= "96214400") {
-                $fichier = preg_replace("` `i", "", $fichier);
-                if (file_exists('./donnees/pdf/' . $fichier)) {
-                    touch($fichier);
-                }
-                move_uploaded_file($tmp, './donnees/pdf/' . $fichier);
-            } else {
-                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
-            }
-        } else {
-            echo $retour[1], '<br />';
-        }
-    }
-}
+//function upload_pdf() {
+//    $fichier = $_FILES['doc']['name'];
+//    $size = $_FILES['doc']['size'];
+//    $tmp = $_FILES['doc']['tmp_name'];
+//    $type = $_FILES['doc']['type'];
+//    $error = $_FILES['doc']['error'];
+//    $extensions = array('.docx', '.txt', '.pdf');
+//    $extension = strrchr($_FILES['doc']['name'], '.');
+//    $retour = up_error($error, $fichier);
+//    if ($retour[0] === true) {
+//        if (is_uploaded_file($tmp)) {
+//            if (in_array($extension, $extensions) && $size <= "96214400") {
+//                $fichier = preg_replace("` `i", "", $fichier);
+//                if (file_exists('./donnees/pdf/' . $fichier)) {
+//                    touch($fichier);
+//                }
+//                move_uploaded_file($tmp, './donnees/pdf/' . $fichier);
+//            } else {
+//                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
+//            }
+//        } else {
+//            echo $retour[1], '<br />';
+//        }
+//    }
+//}
 
 function upload_file() {
     $dossier = './donnees/pdf/';
@@ -265,9 +265,8 @@ function upload_file() {
         //On formate le nom du fichier ici...
         $fichier = strtr($fichier, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-        if (move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier . $fichier)) { //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-            echo 'Upload effectué avec succès !';
-        } else { //Sinon (la fonction renvoie FALSE).
+        if (!move_uploaded_file($_FILES['pdf']['tmp_name'], $dossier . $fichier)) { //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+            //Sinon (la fonction renvoie FALSE).
             echo 'Echec de l\'upload !';
         }
     } else {
@@ -299,15 +298,16 @@ function modifXml($id, $contenu) {
     $dom->save('donnees/xml/bdd.xml');
 }
 
-/*************************************************
- *----------GESTION CONSEILS----------------------
- *------------------------------------------------/
+/* * ***********************************************
+ * ----------GESTION CONSEILS----------------------
+ * ------------------------------------------------/
 
-/**
+  /**
  * ajout d'un nouveau conseil
  * @param type $date
  * @param type $fichier
  */
+
 function ajoutXml($date, $fichier) {
     $dom = new DOMDocument();
     $dom->load('donnees/xml/bdd.xml');
@@ -382,7 +382,7 @@ function supprXmlConseils($id) {
     }
 }
 
-/*-------------------FIN CONSEILS*/
+/* -------------------FIN CONSEILS */
 
 //ahmad pour la page HEDT
 function edt_titre($fichier) {
