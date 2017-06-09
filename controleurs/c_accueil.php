@@ -28,8 +28,7 @@ switch ($action) {
                 if (isset($_FILES['doc']['tmp_name'])) {
                     if (is_uploaded_file($_FILES['doc']['tmp_name'])) {
                         $fichier = $_FILES['doc']['name'];
-                        upload_img();
-                        $contenu = preg_replace("` `i", "", $fichier);
+                        $contenu = upload_img();
                     }
                 }
                 modifXml($id, $contenu);
