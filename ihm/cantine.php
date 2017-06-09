@@ -5,9 +5,11 @@
 
             <h2>
 
-                <?php echo $titres[0]; ?>  
+                <?php echo $titres[0]; ?>  </h2>
+               
+                
                 <?php modeAdmin($estConnecte, "cantine_text_1", "edit_text") ?>
-            </h2>
+            
             <P>
 
                 <?php echo $texts[0]; ?>  
@@ -21,9 +23,10 @@
             
         </div>
     </div>
-
-
-
+    <div id="img_inscription">
+<a target="_blank" href=" <?php echo $line; ?>"><img src='donnees/img/arrow_icon.png'/></a>
+<?php modeAdmin($estConnecte, "cantine_line", "edit_text") ?>  
+</div>
 
 
 </div>

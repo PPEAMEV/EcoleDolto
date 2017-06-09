@@ -12,6 +12,7 @@ switch ($action) {
             $images = cantine_image($fichier);
             $titres = cantine_titre($fichier);
             $pdfs = cantine_pdf($fichier);
+            $line = cantine_line($fichier);
             $ligne = footer($fichier);
             $url = "index.php?uc=cantine&action=majXml";
             if ($estConnecte) {
@@ -43,6 +44,7 @@ switch ($action) {
             $texts = cantine_text($fichier);
             $images = cantine_image($fichier);
             $titres = cantine_titre($fichier);
+            $line = cantine_line($fichier);
             $pdfs = cantine_pdf($fichier);
             $ligne = footer($fichier);
             $url = "index.php?uc=cantine&action=majXml";
