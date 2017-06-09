@@ -6,5 +6,4 @@
 
 <?php if (isset($errlog)): ?>
     <div>Veuillez changer de mot de passe!</div>
-    <?php
- endif;
+<?php endif;

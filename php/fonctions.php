@@ -185,7 +185,7 @@ function upload_img() {
     $type = $_FILES['doc']['type']; //type de l'image
     $error = $_FILES['doc']['error'];
     $retour = up_error($error, $fichier);
-    //$nom_final=" ";
+    $nom_final = " ";
     if ($retour[0] === true) {
         //On récupère la taille de l'image
         list($width, $height) = getimagesize($tmp);
@@ -197,20 +197,21 @@ function upload_img() {
                 $fichier = preg_replace("` `i", "", $fichier); //ligne facultative :)
                 //On vérifie s'il existe une image qui a le même nom dans le répertoire
                 if (file_exists('./donnees/img/' . $fichier)) {
-                    touch($fichier);
+                    /*    touch($fichier);
+                      } */
+                    /* Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première 
+                     * (comme cela on est sur de ne pas avoir 2 images avec le même nom :) ) */
+                    $timestamp = time();
+                    $nomFichier = explode(".",$fichier);
+                    $extension = explode("/",$type);
+                    $nom_final = $nomFichier[0].$timestamp.".".$extension[1];
+                } else {
+                    $nom_final = $fichier; //l'image n'existe pas on garde le même nom
                 }
-                /* Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première 
-                 * (comme cela on est sur de ne pas avoir 2 images avec le même nom :) )
-                  $nom_final= preg_replace("`.*`is",date("U").".*",$fichier);
-                  }
-                  else {
-                  $nom_final=$fichier; //l'image n'existe pas on garde le même nom
-                  }
-                 */
+
                 //on déplace l'image dans le répertoire final
-                move_uploaded_file($tmp, './donnees/img/' . $fichier);
-                //Message indiquant que tout s'est bien passé
-//                    echo "L'image a été uploadée avec succès<br/>";
+                move_uploaded_file($tmp, './donnees/img/' . $nom_final);
+
             } else {
                 //Le type mime, ou la taille ou le poids est incorrect
                 echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
@@ -219,7 +220,9 @@ function upload_img() {
             echo $retour[1], '<br />';
         }
     }
+    return $nom_final;
 }
+
 
 //function upload_pdf() {
 //    $fichier = $_FILES['doc']['name'];
@@ -429,6 +432,11 @@ function cantine_image($fichier) {
     $images[0] = (string) $fichier->cantine->ligne[0];
     return $images;
 }
+function cantine_line($fichier) {
+    $line= (string) $fichier->cantine->ligne[3];
+     return $line;
+}
+
 
 function cantine_text($fichier) {
     $texts[0] = (string) $fichier->cantine->ligne[1];
