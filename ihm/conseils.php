@@ -24,7 +24,7 @@
                         <div class="form-group">
                             <label for="contenu" class="col-lg-2 control-label">Document PDF</label>
                             <div class="col-lg-10">
-                                <input id="pdf" type="file" class="form-control" name="pdf" accept="application/pdf">
+                                <input id="pdf" type="file" class="form-control" name="doc" accept="application/pdf">
                             </div>
                         </div>
                         <div class="form-group">

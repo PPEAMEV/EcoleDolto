@@ -14,9 +14,9 @@ switch ($action) {
 
         break;
     case 'ajoutXml':
-        if (isset($_POST['date']) && isset($_FILES['pdf']) && ($_FILES['pdf']['error'] == 0)) {
+        if (isset($_POST['date']) && isset($_FILES['doc']) && ($_FILES['doc']['error'] == 0)) {
             $date = $_POST['date'];
-            $fichierIni = $_FILES['pdf']['name'];
+            $fichierIni = $_FILES['doc']['name'];
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
             upload_file();
             ajoutXml($date, $fichier);
@@ -40,8 +40,8 @@ switch ($action) {
         break;
     case 'modifXml':
         if (isset($_POST['date']) && isset($_POST['id-conseil'])) {
-            if (isset($_FILES['pdf']) && ($_FILES['pdf']['error'] == 0)) {
-                $fichierIni = $_FILES['pdf']['name'];
+            if (isset($_FILES['doc']) && ($_FILES['doc']['error'] == 0)) {
+                $fichierIni = $_FILES['doc']['name'];
                 $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
                 upload_file();
             } else {
