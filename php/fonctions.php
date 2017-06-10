@@ -223,59 +223,32 @@ function upload_img() {
     return $nom_final;
 }
 
-
-//function upload_pdf() {
-//    $fichier = $_FILES['doc']['name'];
-//    $size = $_FILES['doc']['size'];
-//    $tmp = $_FILES['doc']['tmp_name'];
-//    $type = $_FILES['doc']['type'];
-//    $error = $_FILES['doc']['error'];
-//    $extensions = array('.docx', '.txt', '.pdf');
-//    $extension = strrchr($_FILES['doc']['name'], '.');
-//    $retour = up_error($error, $fichier);
-//    if ($retour[0] === true) {
-//        if (is_uploaded_file($tmp)) {
-//            if (in_array($extension, $extensions) && $size <= "96214400") {
-//                $fichier = preg_replace("` `i", "", $fichier);
-//                if (file_exists('./donnees/pdf/' . $fichier)) {
-//                    touch($fichier);
-//                }
-//                move_uploaded_file($tmp, './donnees/pdf/' . $fichier);
-//            } else {
-//                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
-//            }
-//        } else {
-//            echo $retour[1], '<br />';
-//        }
-//    }
-//}
-
-function upload_file() {
-    $dossier = './donnees/pdf/';
-    $fichier = basename($_FILES['doc']['name']);
-    $taille_maxi = 26214400;
-    $taille = filesize($_FILES['doc']['tmp_name']);
+// AhMaD: pour upload les pdfs dans la page HEDT
+function upload_pdf() {
+    $fichier = $_FILES['doc']['name'];
+    $size = $_FILES['doc']['size'];
+    $tmp = $_FILES['doc']['tmp_name'];
+    $type = $_FILES['doc']['type'];
+    $error = $_FILES['doc']['error'];
     $extensions = array('.docx', '.txt', '.pdf');
     $extension = strrchr($_FILES['doc']['name'], '.');
-//Début des vérifications de sécurité...
-    if (!in_array($extension, $extensions)) { //Si l'extension n'est pas dans le tableau
-        $erreur = 'Vous devez uploader un fichier de type pdf, txt ou doc...';
-    }
-    if ($taille > $taille_maxi) {
-        $erreur = 'Le fichier est trop gros...';
-    }
-    if (!isset($erreur)) { //S'il n'y a pas d'erreur, on upload
-        //On formate le nom du fichier ici...
-        $fichier = strtr($fichier, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-        if (!move_uploaded_file($_FILES['doc']['tmp_name'], $dossier . $fichier)) { //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-            //Sinon (la fonction renvoie FALSE).
-            echo 'Echec de l\'upload !';
+    $retour = up_error($error, $fichier);
+    if ($retour[0] === true) {
+        if (is_uploaded_file($tmp)) {
+            if (in_array($extension, $extensions) && $size <= "96214400") {
+                $fichier = preg_replace("` `i", "", $fichier);
+             
+                move_uploaded_file($tmp, './donnees/pdf/' . $fichier);
+            } else {
+                echo 'Votre image a été rejetée (poids, taille ou type incorrect)';
+            }
+        } else {
+            echo $retour[1], '<br />';
         }
-    } else {
-        echo $erreur;
     }
 }
+
+
 
 //Fonction permettant de modifier le fichier xml - Actualisation du bdd.xml en fonction de la modification réalisée par l'admin (M)
 //création d'un objet DOM
