@@ -18,7 +18,9 @@ switch ($action) {
             $date = $_POST['date'];
             $fichierIni = $_FILES['doc']['name'];
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichierIni);
-            upload_file();
+                upload_pdf();
+                        $contenu = preg_replace("` `i", "", $fichier);
+                        $contenu = "donnees/pdf/" . $contenu;
             ajoutXml($date, $fichier);
             $fichier = recupXml();
         }
